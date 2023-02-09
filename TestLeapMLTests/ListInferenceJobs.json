@@ -1,0 +1,86 @@
+[
+    {
+        "id": "a91f0ad4-0abd-49a0-82fc-d198c187421f",
+        "status": "finished",
+        "prompt": "@cat with a hat",
+        "negativePrompt": "asymmetric, watermarks",
+        "seed": 4523184,
+        "width": 512,
+        "height": 512,
+        "numberOfImages": 1,
+        "steps": 50,
+        "createdAt": "2023-02-08T08:27:42.420352+00:00",
+        "promptStrength": 7,
+        "images": [
+            {
+                "id": "1ff194b9-d55b-4336-bbad-031bf082782c",
+                "uri": "https://dreamtrain.s3.us-west-2.amazonaws.com/image-gen-a91f0ad4-0abd-49a0-82fc-d198c187421f/generated_images/0.png",
+                "createdAt": "2023-02-08T08:27:58.949Z"
+            }
+        ],
+        "modelId": "8b1b897c-d66d-45a6-b8d7-8e32421d02cf"
+    },
+    {
+        "id": "39e67345-11f0-4dcc-8300-cdd9653c2cb9",
+        "status": "finished",
+        "prompt": "@cat with a hat",
+        "negativePrompt": "asymmetric, watermarks",
+        "seed": 34174,
+        "width": 512,
+        "height": 512,
+        "numberOfImages": 1,
+        "steps": 50,
+        "createdAt": "2023-02-09T13:33:56.753319+00:00",
+        "promptStrength": 7,
+        "images": [
+            {
+                "id": "e97565ea-0ed1-4b2b-8a5c-e5f24492d271",
+                "uri": "https://dreamtrain.s3.us-west-2.amazonaws.com/image-gen-39e67345-11f0-4dcc-8300-cdd9653c2cb9/generated_images/0.png",
+                "createdAt": "2023-02-09T13:34:07.928Z"
+            }
+        ],
+        "modelId": "8b1b897c-d66d-45a6-b8d7-8e32421d02cf"
+    },
+    {
+        "id": "f22744fc-7b83-4d9b-8646-95e54e8439e4",
+        "status": "finished",
+        "prompt": "@cat with a hat",
+        "negativePrompt": "asymmetric, watermarks",
+        "seed": 58589,
+        "width": 512,
+        "height": 512,
+        "numberOfImages": 1,
+        "steps": 50,
+        "createdAt": "2023-02-09T13:35:32.016761+00:00",
+        "promptStrength": 7,
+        "images": [
+            {
+                "id": "c3be6218-d878-46c1-8934-84d72007a4fd",
+                "uri": "https://dreamtrain.s3.us-west-2.amazonaws.com/image-gen-f22744fc-7b83-4d9b-8646-95e54e8439e4/generated_images/0.png",
+                "createdAt": "2023-02-09T13:35:43.722Z"
+            }
+        ],
+        "modelId": "8b1b897c-d66d-45a6-b8d7-8e32421d02cf"
+    },
+    {
+        "id": "4f7598aa-21e5-45e6-bb67-5270989ccfe6",
+        "status": "finished",
+        "prompt": "@cat with a hat",
+        "negativePrompt": "asymmetric, watermarks",
+        "seed": 3671,
+        "width": 512,
+        "height": 512,
+        "numberOfImages": 1,
+        "steps": 50,
+        "createdAt": "2023-02-09T13:43:00.545145+00:00",
+        "promptStrength": 7,
+        "images": [
+            {
+                "id": "39367885-c07f-43ef-952c-952768cc9f3a",
+                "uri": "https://dreamtrain.s3.us-west-2.amazonaws.com/image-gen-4f7598aa-21e5-45e6-bb67-5270989ccfe6/generated_images/0.png",
+                "createdAt": "2023-02-09T13:43:12.243Z"
+            }
+        ],
+        "modelId": "8b1b897c-d66d-45a6-b8d7-8e32421d02cf"
+    }
+]

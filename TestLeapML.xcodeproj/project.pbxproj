@@ -12,19 +12,22 @@
 		89FC5EB829939615004340DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EB729939615004340DE /* Assets.xcassets */; };
 		89FC5EBC29939615004340DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EBB29939615004340DE /* Preview Assets.xcassets */; };
 		89FC5EC629939615004340DE /* TestLeapMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EC529939615004340DE /* TestLeapMLTests.swift */; };
-		89FC5ED029939615004340DE /* TestLeapMLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5ECF29939615004340DE /* TestLeapMLUITests.swift */; };
-		89FC5ED229939615004340DE /* TestLeapMLUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5ED129939615004340DE /* TestLeapMLUITestsLaunchTests.swift */; };
+		89FC5EE0299396F8004340DE /* GenerateImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EDF299396F8004340DE /* GenerateImageService.swift */; };
+		89FC5EE1299396F8004340DE /* GenerateImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EDF299396F8004340DE /* GenerateImageService.swift */; };
+		89FC5EE32993972B004340DE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EE22993972B004340DE /* ServiceConstants.swift */; };
+		89FC5EE42993972B004340DE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EE22993972B004340DE /* ServiceConstants.swift */; };
+		89FC5EE72993E15D004340DE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EE62993E060004340DE /* Info.plist */; };
+		89FC5EE929952C37004340DE /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EE829952C37004340DE /* ServiceError.swift */; };
+		89FC5EEA29952C37004340DE /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EE829952C37004340DE /* ServiceError.swift */; };
+		89FC5EEC29953031004340DE /* ListInferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EEB29953031004340DE /* ListInferenceService.swift */; };
+		89FC5EED29953031004340DE /* ListInferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EEB29953031004340DE /* ListInferenceService.swift */; };
+		89FC5EEF299535FF004340DE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EEE299535FF004340DE /* Service.swift */; };
+		89FC5EF0299535FF004340DE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EEE299535FF004340DE /* Service.swift */; };
+		89FC5EF229953760004340DE /* ListInferenceJobs.json in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EF129953760004340DE /* ListInferenceJobs.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		89FC5EC229939615004340DE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 89FC5EA829939613004340DE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 89FC5EAF29939613004340DE;
-			remoteInfo = TestLeapML;
-		};
-		89FC5ECC29939615004340DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 89FC5EA829939613004340DE /* Project object */;
 			proxyType = 1;
@@ -42,9 +45,14 @@
 		89FC5EBB29939615004340DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89FC5EC129939615004340DE /* TestLeapMLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestLeapMLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FC5EC529939615004340DE /* TestLeapMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLeapMLTests.swift; sourceTree = "<group>"; };
-		89FC5ECB29939615004340DE /* TestLeapMLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestLeapMLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		89FC5ECF29939615004340DE /* TestLeapMLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLeapMLUITests.swift; sourceTree = "<group>"; };
-		89FC5ED129939615004340DE /* TestLeapMLUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLeapMLUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		89FC5EDF299396F8004340DE /* GenerateImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateImageService.swift; sourceTree = "<group>"; };
+		89FC5EE22993972B004340DE /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
+		89FC5EE52993DD5A004340DE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		89FC5EE62993E060004340DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		89FC5EE829952C37004340DE /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		89FC5EEB29953031004340DE /* ListInferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInferenceService.swift; sourceTree = "<group>"; };
+		89FC5EEE299535FF004340DE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		89FC5EF129953760004340DE /* ListInferenceJobs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListInferenceJobs.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,22 +70,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89FC5EC829939615004340DE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		89FC5EA729939613004340DE = {
 			isa = PBXGroup;
 			children = (
+				89FC5EE52993DD5A004340DE /* Config.xcconfig */,
 				89FC5EB229939613004340DE /* TestLeapML */,
 				89FC5EC429939615004340DE /* TestLeapMLTests */,
-				89FC5ECE29939615004340DE /* TestLeapMLUITests */,
 				89FC5EB129939613004340DE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +88,6 @@
 			children = (
 				89FC5EB029939613004340DE /* TestLeapML.app */,
 				89FC5EC129939615004340DE /* TestLeapMLTests.xctest */,
-				89FC5ECB29939615004340DE /* TestLeapMLUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +95,8 @@
 		89FC5EB229939613004340DE /* TestLeapML */ = {
 			isa = PBXGroup;
 			children = (
+				89FC5EE62993E060004340DE /* Info.plist */,
+				89FC5EDE299396C7004340DE /* Services */,
 				89FC5EB329939613004340DE /* TestLeapMLApp.swift */,
 				89FC5EB529939613004340DE /* ContentView.swift */,
 				89FC5EB729939615004340DE /* Assets.xcassets */,
@@ -115,18 +117,22 @@
 		89FC5EC429939615004340DE /* TestLeapMLTests */ = {
 			isa = PBXGroup;
 			children = (
+				89FC5EF129953760004340DE /* ListInferenceJobs.json */,
 				89FC5EC529939615004340DE /* TestLeapMLTests.swift */,
 			);
 			path = TestLeapMLTests;
 			sourceTree = "<group>";
 		};
-		89FC5ECE29939615004340DE /* TestLeapMLUITests */ = {
+		89FC5EDE299396C7004340DE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				89FC5ECF29939615004340DE /* TestLeapMLUITests.swift */,
-				89FC5ED129939615004340DE /* TestLeapMLUITestsLaunchTests.swift */,
+				89FC5EDF299396F8004340DE /* GenerateImageService.swift */,
+				89FC5EE22993972B004340DE /* ServiceConstants.swift */,
+				89FC5EE829952C37004340DE /* ServiceError.swift */,
+				89FC5EEB29953031004340DE /* ListInferenceService.swift */,
+				89FC5EEE299535FF004340DE /* Service.swift */,
 			);
-			path = TestLeapMLUITests;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,24 +173,6 @@
 			productReference = 89FC5EC129939615004340DE /* TestLeapMLTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		89FC5ECA29939615004340DE /* TestLeapMLUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 89FC5EDB29939615004340DE /* Build configuration list for PBXNativeTarget "TestLeapMLUITests" */;
-			buildPhases = (
-				89FC5EC729939615004340DE /* Sources */,
-				89FC5EC829939615004340DE /* Frameworks */,
-				89FC5EC929939615004340DE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				89FC5ECD29939615004340DE /* PBXTargetDependency */,
-			);
-			name = TestLeapMLUITests;
-			productName = TestLeapMLUITests;
-			productReference = 89FC5ECB29939615004340DE /* TestLeapMLUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,10 +187,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					89FC5EC029939615004340DE = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 89FC5EAF29939613004340DE;
-					};
-					89FC5ECA29939615004340DE = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 89FC5EAF29939613004340DE;
 					};
@@ -223,7 +207,6 @@
 			targets = (
 				89FC5EAF29939613004340DE /* TestLeapML */,
 				89FC5EC029939615004340DE /* TestLeapMLTests */,
-				89FC5ECA29939615004340DE /* TestLeapMLUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +218,7 @@
 			files = (
 				89FC5EBC29939615004340DE /* Preview Assets.xcassets in Resources */,
 				89FC5EB829939615004340DE /* Assets.xcassets in Resources */,
+				89FC5EE72993E15D004340DE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,13 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		89FC5EC929939615004340DE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				89FC5EF229953760004340DE /* ListInferenceJobs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +237,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FC5EE929952C37004340DE /* ServiceError.swift in Sources */,
+				89FC5EEF299535FF004340DE /* Service.swift in Sources */,
 				89FC5EB629939613004340DE /* ContentView.swift in Sources */,
+				89FC5EE0299396F8004340DE /* GenerateImageService.swift in Sources */,
 				89FC5EB429939613004340DE /* TestLeapMLApp.swift in Sources */,
+				89FC5EE32993972B004340DE /* ServiceConstants.swift in Sources */,
+				89FC5EEC29953031004340DE /* ListInferenceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,16 +251,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FC5EED29953031004340DE /* ListInferenceService.swift in Sources */,
+				89FC5EEA29952C37004340DE /* ServiceError.swift in Sources */,
+				89FC5EE42993972B004340DE /* ServiceConstants.swift in Sources */,
+				89FC5EE1299396F8004340DE /* GenerateImageService.swift in Sources */,
 				89FC5EC629939615004340DE /* TestLeapMLTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		89FC5EC729939615004340DE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				89FC5ED029939615004340DE /* TestLeapMLUITests.swift in Sources */,
-				89FC5ED229939615004340DE /* TestLeapMLUITestsLaunchTests.swift in Sources */,
+				89FC5EF0299535FF004340DE /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,16 +268,12 @@
 			target = 89FC5EAF29939613004340DE /* TestLeapML */;
 			targetProxy = 89FC5EC229939615004340DE /* PBXContainerItemProxy */;
 		};
-		89FC5ECD29939615004340DE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 89FC5EAF29939613004340DE /* TestLeapML */;
-			targetProxy = 89FC5ECC29939615004340DE /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		89FC5ED329939615004340DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89FC5EE52993DD5A004340DE /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -357,6 +332,7 @@
 		};
 		89FC5ED429939615004340DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89FC5EE52993DD5A004340DE /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -408,6 +384,7 @@
 		};
 		89FC5ED629939615004340DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89FC5EE52993DD5A004340DE /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -417,6 +394,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TestLeapML/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestLeapML/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -444,6 +422,7 @@
 		};
 		89FC5ED729939615004340DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89FC5EE52993DD5A004340DE /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -453,6 +432,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TestLeapML/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestLeapML/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -522,48 +502,6 @@
 			};
 			name = Release;
 		};
-		89FC5EDC29939615004340DE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nl.dutchvirtual.TestLeapMLUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TestLeapML;
-			};
-			name = Debug;
-		};
-		89FC5EDD29939615004340DE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nl.dutchvirtual.TestLeapMLUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TestLeapML;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -590,15 +528,6 @@
 			buildConfigurations = (
 				89FC5ED929939615004340DE /* Debug */,
 				89FC5EDA29939615004340DE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		89FC5EDB29939615004340DE /* Build configuration list for PBXNativeTarget "TestLeapMLUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				89FC5EDC29939615004340DE /* Debug */,
-				89FC5EDD29939615004340DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
