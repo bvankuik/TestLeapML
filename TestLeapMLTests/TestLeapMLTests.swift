@@ -17,12 +17,21 @@ final class TestLeapMLTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testGenerateImage() async throws {
-        let inferences = try await GenerateImageService.call()
-        XCTAssert(!inferences.isEmpty)
+    func testGenerateImageService() async throws {
+        let inference = try await GenerateImageService.call()
+        XCTAssert(!inference.id.isEmpty)
+    }
+    
+    func testGenerateImageModel() {
+        let url = Bundle(for: Self.self).url(forResource: "GenerateImage", withExtension: "json")
+        let data = try! Data(contentsOf: url!)
+        let inference = try! JSONDecoder().decode(Inference.self, from: data)
+        XCTAssert(!inference.id.isEmpty)
+        XCTAssert(inference.images.isEmpty)
+        XCTAssert(!inference.modelID.isEmpty)
     }
 
-    func testListInferenceModel() async throws {
+    func testListInferenceModel() {
         let url = Bundle(for: TestLeapMLTests.self).url(forResource: "ListInferenceJobs", withExtension: "json")
         let data = try! Data(contentsOf: url!)
         let jobs = try! JSONDecoder().decode([InferenceJob].self, from: data)

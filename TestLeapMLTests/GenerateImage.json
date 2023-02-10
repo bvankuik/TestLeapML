@@ -1,0 +1,15 @@
+{
+  "status": "queued",
+  "id": "55f7b0a4-089e-4936-84a5-f33910aa0936",
+  "prompt": "cat with two legs",
+  "negativePrompt": "asymmetric, watermarks",
+  "seed": 45231,
+  "width": 512,
+  "height": 512,
+  "numberOfImages": 1,
+  "steps": 50,
+  "createdAt": "2023-02-10T08:08:25.842Z",
+  "promptStrength": 7,
+  "images": [],
+  "modelId": "8b1b897c-d66d-45a6-b8d7-8e32421d02cf"
+}

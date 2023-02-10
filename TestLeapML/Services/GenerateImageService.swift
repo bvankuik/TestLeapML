@@ -10,12 +10,14 @@ import Foundation
 struct Inference: Codable {
     let id, createdAt, prompt, negativePrompt: String
     let seed, width, height, promptStrength: Int
-    let numberOfImages, state, steps: Int
-    let images, modelID: [String]
+    let numberOfImages, steps: Int
+    let status: String // queued
+    let images: [String]
+    let modelID: String
 
     enum CodingKeys: String, CodingKey {
-        case id, createdAt, prompt, negativePrompt, seed, width, height, promptStrength, numberOfImages, state, steps, images
-        case modelID
+        case id, createdAt, prompt, negativePrompt, seed, width, height, promptStrength, numberOfImages, status, steps, images
+        case modelID = "modelId"
     }
 }
 
@@ -32,20 +34,9 @@ struct GenerateImageBody: Codable {
     let webhookUrl: String?
 }
 
-struct GenerateImageService {
-    static func call() async throws -> [Inference] {
-        let modelID = "8b1b897c-d66d-45a6-b8d7-8e32421d02cf"
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "api.leapml.dev"
-        components.path = "/api/v1/images/models/\(modelID)/inferences"
-        
-        guard let url = components.url else {
-            fatalError("Can't build URL for some reason")
-        }
-        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else {
-            fatalError("API key not found")
-        }
+struct GenerateImageService: Service {
+    static func call() async throws -> Inference {
+        var request = makeRequest()
         
         let generateImageBody = GenerateImageBody(
             prompt: "@cat with a hat",
@@ -54,7 +45,7 @@ struct GenerateImageService {
             steps: 50,
             width: 512,
             height: 512,
-            numberOfImages: 1,
+            numberOfImages: 2,
             promptStrength: 7,
             seed: Int.random(in: 1..<(2<<15)),
             webhookUrl: nil
@@ -64,19 +55,18 @@ struct GenerateImageService {
         }
         
         print(String(data: httpBody, encoding: .utf8)!)
-        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = httpBody
-        request.allHTTPHeaderFields = [
-            "accept": "application/json",
-            "content-type": "application/json",
-            "authorization": "Bearer \(apiKey)",
-        ]
+
         let (data, response) = try await URLSession.shared.data(for: request)
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+        if let httpResponse = response as? HTTPURLResponse,
+           !([200, 201].contains(httpResponse.statusCode)) {
+            
+            print(String(data: data, encoding: .utf8)!)
+            print("Server statusCode = \(httpResponse.statusCode)")
             throw ServiceError("Server error")
         }
         
-        return try JSONDecoder().decode([Inference].self, from: data)
+        return try JSONDecoder().decode(Inference.self, from: data)
     }
 }
