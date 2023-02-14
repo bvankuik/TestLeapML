@@ -16,7 +16,7 @@
 		89FC5EE1299396F8004340DE /* GenerateImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EDF299396F8004340DE /* GenerateImageService.swift */; };
 		89FC5EE32993972B004340DE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EE22993972B004340DE /* ServiceConstants.swift */; };
 		89FC5EE42993972B004340DE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EE22993972B004340DE /* ServiceConstants.swift */; };
-		89FC5EE72993E15D004340DE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EE62993E060004340DE /* Info.plist */; };
+		89FC5EE72993E15D004340DE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EE62993E060004340DE /* Info.plist */; platformFilters = (macos, ); };
 		89FC5EE929952C37004340DE /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EE829952C37004340DE /* ServiceError.swift */; };
 		89FC5EEA29952C37004340DE /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EE829952C37004340DE /* ServiceError.swift */; };
 		89FC5EEC29953031004340DE /* ListInferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EEB29953031004340DE /* ListInferenceService.swift */; };
@@ -25,6 +25,17 @@
 		89FC5EF0299535FF004340DE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EEE299535FF004340DE /* Service.swift */; };
 		89FC5EF229953760004340DE /* ListInferenceJobs.json in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EF129953760004340DE /* ListInferenceJobs.json */; };
 		89FC5EF429962DC5004340DE /* GenerateImage.json in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EF329962DC5004340DE /* GenerateImage.json */; };
+		89FC5EF7299A4C97004340DE /* InferenceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EF6299A4C97004340DE /* InferenceList.swift */; };
+		89FC5EFA299A4CC5004340DE /* InferenceJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EF9299A4CC5004340DE /* InferenceJob.swift */; };
+		89FC5EFC299A4CE9004340DE /* InferenceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EFB299A4CE9004340DE /* InferenceImage.swift */; };
+		89FC5EFE299A4D77004340DE /* Inference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EFD299A4D77004340DE /* Inference.swift */; };
+		89FC5EFF299A4DF7004340DE /* Inference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EFD299A4D77004340DE /* Inference.swift */; };
+		89FC5F00299A4DF7004340DE /* InferenceJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EF9299A4CC5004340DE /* InferenceJob.swift */; };
+		89FC5F01299A4DF7004340DE /* InferenceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EFB299A4CE9004340DE /* InferenceImage.swift */; };
+		89FC5F03299A5037004340DE /* ListInferences.json in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5F02299A5037004340DE /* ListInferences.json */; };
+		89FC5F06299A505A004340DE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5F05299A505A004340DE /* Utils.swift */; };
+		89FC5F08299A6118004340DE /* Toolbars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5F07299A6118004340DE /* Toolbars.swift */; };
+		89FC5F0A299A7034004340DE /* NewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5F09299A7034004340DE /* NewImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +66,14 @@
 		89FC5EEE299535FF004340DE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		89FC5EF129953760004340DE /* ListInferenceJobs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListInferenceJobs.json; sourceTree = "<group>"; };
 		89FC5EF329962DC5004340DE /* GenerateImage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GenerateImage.json; sourceTree = "<group>"; };
+		89FC5EF6299A4C97004340DE /* InferenceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceList.swift; sourceTree = "<group>"; };
+		89FC5EF9299A4CC5004340DE /* InferenceJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceJob.swift; sourceTree = "<group>"; };
+		89FC5EFB299A4CE9004340DE /* InferenceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceImage.swift; sourceTree = "<group>"; };
+		89FC5EFD299A4D77004340DE /* Inference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inference.swift; sourceTree = "<group>"; };
+		89FC5F02299A5037004340DE /* ListInferences.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListInferences.json; sourceTree = "<group>"; };
+		89FC5F05299A505A004340DE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		89FC5F07299A6118004340DE /* Toolbars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbars.swift; sourceTree = "<group>"; };
+		89FC5F09299A7034004340DE /* NewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +116,9 @@
 		89FC5EB229939613004340DE /* TestLeapML */ = {
 			isa = PBXGroup;
 			children = (
+				89FC5F04299A504F004340DE /* Utils */,
+				89FC5EF8299A4CA8004340DE /* Models */,
+				89FC5EF5299A4C79004340DE /* Views */,
 				89FC5EE62993E060004340DE /* Info.plist */,
 				89FC5EDE299396C7004340DE /* Services */,
 				89FC5EB329939613004340DE /* TestLeapMLApp.swift */,
@@ -111,6 +133,7 @@
 		89FC5EBA29939615004340DE /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				89FC5F02299A5037004340DE /* ListInferences.json */,
 				89FC5EBB29939615004340DE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -136,6 +159,34 @@
 				89FC5EEE299535FF004340DE /* Service.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		89FC5EF5299A4C79004340DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89FC5EF6299A4C97004340DE /* InferenceList.swift */,
+				89FC5F07299A6118004340DE /* Toolbars.swift */,
+				89FC5F09299A7034004340DE /* NewImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		89FC5EF8299A4CA8004340DE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				89FC5EF9299A4CC5004340DE /* InferenceJob.swift */,
+				89FC5EFB299A4CE9004340DE /* InferenceImage.swift */,
+				89FC5EFD299A4D77004340DE /* Inference.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		89FC5F04299A504F004340DE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				89FC5F05299A505A004340DE /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89FC5EBC29939615004340DE /* Preview Assets.xcassets in Resources */,
+				89FC5F03299A5037004340DE /* ListInferences.json in Resources */,
 				89FC5EB829939615004340DE /* Assets.xcassets in Resources */,
 				89FC5EE72993E15D004340DE /* Info.plist in Resources */,
 			);
@@ -241,13 +293,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FC5F0A299A7034004340DE /* NewImage.swift in Sources */,
 				89FC5EE929952C37004340DE /* ServiceError.swift in Sources */,
+				89FC5EFC299A4CE9004340DE /* InferenceImage.swift in Sources */,
+				89FC5EF7299A4C97004340DE /* InferenceList.swift in Sources */,
 				89FC5EEF299535FF004340DE /* Service.swift in Sources */,
 				89FC5EB629939613004340DE /* ContentView.swift in Sources */,
+				89FC5F08299A6118004340DE /* Toolbars.swift in Sources */,
+				89FC5EFE299A4D77004340DE /* Inference.swift in Sources */,
 				89FC5EE0299396F8004340DE /* GenerateImageService.swift in Sources */,
 				89FC5EB429939613004340DE /* TestLeapMLApp.swift in Sources */,
+				89FC5EFA299A4CC5004340DE /* InferenceJob.swift in Sources */,
 				89FC5EE32993972B004340DE /* ServiceConstants.swift in Sources */,
 				89FC5EEC29953031004340DE /* ListInferenceService.swift in Sources */,
+				89FC5F06299A505A004340DE /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +319,10 @@
 				89FC5EE42993972B004340DE /* ServiceConstants.swift in Sources */,
 				89FC5EE1299396F8004340DE /* GenerateImageService.swift in Sources */,
 				89FC5EC629939615004340DE /* TestLeapMLTests.swift in Sources */,
+				89FC5EFF299A4DF7004340DE /* Inference.swift in Sources */,
 				89FC5EF0299535FF004340DE /* Service.swift in Sources */,
+				89FC5F01299A4DF7004340DE /* InferenceImage.swift in Sources */,
+				89FC5F00299A4DF7004340DE /* InferenceJob.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

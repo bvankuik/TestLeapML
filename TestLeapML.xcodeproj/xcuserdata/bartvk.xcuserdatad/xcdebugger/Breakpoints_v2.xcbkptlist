@@ -14,8 +14,8 @@
             filePath = "TestLeapML/Services/ListInferenceService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "call()"
             landmarkType = "7">
             <Locations>
@@ -80,6 +80,22 @@
                   offsetFromSymbolStart = "412">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D8F0BF8-DA7B-4F74-9AEA-4551FEA49CEE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestLeapMLTests/TestLeapMLTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "testListInferenceModel()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -8,23 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Button(action: self.buttonAction) {
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
-            }
-            .padding()
-        }
-    }
+    @State private var isShowingNewImage = false
+    private var jobs: [InferenceJob] = []
     
-    private func buttonAction() {
-        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else {
-            fatalError()
+    var body: some View {
+        NavigationStack {
+            InferenceList(jobs: self.jobs)
+                .toolbar {
+                    Toolbars(isShowingNewImage: self.$isShowingNewImage)
+                }
+                .sheet(isPresented: self.$isShowingNewImage) {
+                    NewImage()
+                }
         }
-        print("apiKey=\(apiKey)")
     }
 }
 

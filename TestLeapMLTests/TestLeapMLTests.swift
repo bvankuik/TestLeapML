@@ -18,7 +18,17 @@ final class TestLeapMLTests: XCTestCase {
     }
 
     func testGenerateImageService() async throws {
-        let inference = try await GenerateImageService.call()
+        let requestBody = GenerateImageService.RequestBody(
+            prompt: "A photo of an astronaut riding a horse",
+            negativePrompt: "asymmetric, watermarks",
+            version: nil,
+            steps: 50,
+            width: 512,
+            height: 512,
+            numberOfImages: 1,
+            promptStrength: 7,
+            webhookUrl: nil)
+        let inference = try await GenerateImageService.call(requestBody: requestBody)
         XCTAssert(!inference.id.isEmpty)
     }
     
@@ -32,7 +42,7 @@ final class TestLeapMLTests: XCTestCase {
     }
 
     func testListInferenceModel() {
-        let url = Bundle(for: TestLeapMLTests.self).url(forResource: "ListInferenceJobs", withExtension: "json")
+        let url = Bundle(for: Self.self).url(forResource: "ListInferenceJobs", withExtension: "json")
         let data = try! Data(contentsOf: url!)
         let jobs = try! JSONDecoder().decode([InferenceJob].self, from: data)
         XCTAssert(!jobs.isEmpty)
