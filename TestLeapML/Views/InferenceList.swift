@@ -12,7 +12,12 @@ struct InferenceList: View {
     
     var body: some View {
         List(jobs) { job in
-            /*@START_MENU_TOKEN@*/Text(job.id)/*@END_MENU_TOKEN@*/
+            NavigationLink(destination: {
+                InferenceDetail(inferenceJob: job)
+            }, label: {
+                Text(job.id)
+                    .lineLimit(1)
+            })
         }
         .navigationTitle("Inference jobs")
     }
@@ -22,6 +27,8 @@ struct InferenceList_Previews: PreviewProvider {
     static let jobs = Utils.loadModel([InferenceJob].self, from: "ListInferences")
     
     static var previews: some View {
-        InferenceList(jobs: Self.jobs)
+        NavigationStack {
+            InferenceList(jobs: Self.jobs)
+        }
     }
 }

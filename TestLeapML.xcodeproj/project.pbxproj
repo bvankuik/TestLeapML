@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89B92F1B299BB711008B1375 /* ErrorBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B92F1A299BB711008B1375 /* ErrorBar.swift */; };
+		89B92F1D299BB810008B1375 /* DisplayableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B92F1C299BB810008B1375 /* DisplayableError.swift */; };
+		89B92F1F299BC061008B1375 /* InferenceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B92F1E299BC061008B1375 /* InferenceDetail.swift */; };
 		89FC5EB429939613004340DE /* TestLeapMLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EB329939613004340DE /* TestLeapMLApp.swift */; };
 		89FC5EB629939613004340DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EB529939613004340DE /* ContentView.swift */; };
 		89FC5EB829939615004340DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EB729939615004340DE /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89B92F1A299BB711008B1375 /* ErrorBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBar.swift; sourceTree = "<group>"; };
+		89B92F1C299BB810008B1375 /* DisplayableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableError.swift; sourceTree = "<group>"; };
+		89B92F1E299BC061008B1375 /* InferenceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceDetail.swift; sourceTree = "<group>"; };
 		89FC5EB029939613004340DE /* TestLeapML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestLeapML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FC5EB329939613004340DE /* TestLeapMLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLeapMLApp.swift; sourceTree = "<group>"; };
 		89FC5EB529939613004340DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +173,8 @@
 				89FC5EF6299A4C97004340DE /* InferenceList.swift */,
 				89FC5F07299A6118004340DE /* Toolbars.swift */,
 				89FC5F09299A7034004340DE /* NewImage.swift */,
+				89B92F1A299BB711008B1375 /* ErrorBar.swift */,
+				89B92F1E299BC061008B1375 /* InferenceDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				89FC5F05299A505A004340DE /* Utils.swift */,
+				89B92F1C299BB810008B1375 /* DisplayableError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -297,8 +306,11 @@
 				89FC5EE929952C37004340DE /* ServiceError.swift in Sources */,
 				89FC5EFC299A4CE9004340DE /* InferenceImage.swift in Sources */,
 				89FC5EF7299A4C97004340DE /* InferenceList.swift in Sources */,
+				89B92F1B299BB711008B1375 /* ErrorBar.swift in Sources */,
+				89B92F1D299BB810008B1375 /* DisplayableError.swift in Sources */,
 				89FC5EEF299535FF004340DE /* Service.swift in Sources */,
 				89FC5EB629939613004340DE /* ContentView.swift in Sources */,
+				89B92F1F299BC061008B1375 /* InferenceDetail.swift in Sources */,
 				89FC5F08299A6118004340DE /* Toolbars.swift in Sources */,
 				89FC5EFE299A4D77004340DE /* Inference.swift in Sources */,
 				89FC5EE0299396F8004340DE /* GenerateImageService.swift in Sources */,

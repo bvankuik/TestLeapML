@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import OSLog
 
 struct Toolbars: ToolbarContent {
     @Binding var isShowingNewImage: Bool
+    @Binding var jobs: [InferenceJob]
     
     var body: some ToolbarContent {
         ToolbarItem(placement: .primaryAction) {
@@ -18,6 +20,14 @@ struct Toolbars: ToolbarContent {
         }
         ToolbarItem(placement: .primaryAction) {
             Button("Reload") {
+                Task {
+                    do {
+                        self.jobs = try await ListInferenceService.call()
+                    } catch {
+                        os_log("%@", log: .default, type: .info, error.localizedDescription)
+                        throw DisplayableError("Error calling list inferences:\n\(error.localizedDescription)")
+                    }
+                }
             }
         }
     }
@@ -29,7 +39,7 @@ struct Toolbars_Previews: PreviewProvider {
             Text("Hello preview")
                 .navigationTitle("Preview")
                 .toolbar {
-                    Toolbars(isShowingNewImage: .constant(false))
+                    Toolbars(isShowingNewImage: .constant(false), jobs: .constant([]))
                 }
         }
     }
