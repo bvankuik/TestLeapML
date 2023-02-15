@@ -1,0 +1,33 @@
+//
+//  InferenceListViewModel.swift
+//  TestLeapML
+//
+//  Created by Bart van Kuik on 15/02/2023.
+//
+
+import SwiftUI
+import OSLog
+
+extension InferenceList {
+    @MainActor class ViewModel: ObservableObject {
+        @Published var jobs: [InferenceJob] = []
+        
+        func refresh() {
+            Task {
+                do {
+                    self.jobs = try await ListInferenceService.call()
+                } catch {
+                    os_log("%@", log: .default, type: .info, error.localizedDescription)
+                    throw DisplayableError("Error calling list inferences:\n\(error.localizedDescription)")
+                }
+            }
+        }
+        
+        static var mock: ViewModel {
+            let jobs = Utils.loadModel([InferenceJob].self, from: "ListInferences")
+            let viewModel = ViewModel()
+            viewModel.jobs = jobs
+            return viewModel
+        }
+    }
+}

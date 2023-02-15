@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct InferenceList: View {
-    let jobs: [InferenceJob]
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        List(jobs) { job in
+        List(self.viewModel.jobs) { job in
             NavigationLink(destination: {
                 InferenceDetail(inferenceJob: job)
             }, label: {
@@ -24,11 +24,9 @@ struct InferenceList: View {
 }
 
 struct InferenceList_Previews: PreviewProvider {
-    static let jobs = Utils.loadModel([InferenceJob].self, from: "ListInferences")
-    
     static var previews: some View {
         NavigationStack {
-            InferenceList(jobs: Self.jobs)
+            InferenceList(viewModel: InferenceList.ViewModel.mock)
         }
     }
 }

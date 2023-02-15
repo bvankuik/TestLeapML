@@ -10,7 +10,7 @@ import OSLog
 
 struct Toolbars: ToolbarContent {
     @Binding var isShowingNewImage: Bool
-    @Binding var jobs: [InferenceJob]
+    @ObservedObject var listViewModel: InferenceList.ViewModel
     
     var body: some ToolbarContent {
         ToolbarItem(placement: .primaryAction) {
@@ -20,14 +20,7 @@ struct Toolbars: ToolbarContent {
         }
         ToolbarItem(placement: .primaryAction) {
             Button("Reload") {
-                Task {
-                    do {
-                        self.jobs = try await ListInferenceService.call()
-                    } catch {
-                        os_log("%@", log: .default, type: .info, error.localizedDescription)
-                        throw DisplayableError("Error calling list inferences:\n\(error.localizedDescription)")
-                    }
-                }
+                self.listViewModel.refresh()
             }
         }
     }
@@ -39,7 +32,7 @@ struct Toolbars_Previews: PreviewProvider {
             Text("Hello preview")
                 .navigationTitle("Preview")
                 .toolbar {
-                    Toolbars(isShowingNewImage: .constant(false), jobs: .constant([]))
+                    Toolbars(isShowingNewImage: .constant(false), listViewModel: InferenceList.ViewModel.mock)
                 }
         }
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// An inference only has image names, without their URIs.
 struct Inference: Codable {
     let id, createdAt, prompt, negativePrompt: String
     let seed, width, height, promptStrength: Int
