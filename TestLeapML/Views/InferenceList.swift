@@ -7,6 +7,23 @@
 
 import SwiftUI
 
+extension InferenceList {
+    struct RowLabel: View {
+        let job: InferenceJob
+        
+        var body: some View {
+            VStack {
+                Text(job.id)
+                    .lineLimit(1)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text(job.createdAt.formatted(.dateTime))
+                    .font(.caption)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+    }
+}
+
 struct InferenceList: View {
     @ObservedObject var viewModel: ViewModel
     
@@ -15,8 +32,7 @@ struct InferenceList: View {
             NavigationLink(destination: {
                 InferenceDetail(inferenceJob: job)
             }, label: {
-                Text(job.id)
-                    .lineLimit(1)
+                RowLabel(job: job)
             })
         }
         .navigationTitle("Inference jobs")

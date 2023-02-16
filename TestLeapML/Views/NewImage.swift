@@ -8,19 +8,6 @@
 import OSLog
 import SwiftUI
 
-extension NewImage {
-    struct ViewModel {
-        var prompt = ""
-        var negativePrompt = ""
-        var steps = 50
-        var promptStrength = 7
-        
-        var isValid: Bool {
-            !prompt.isEmpty
-        }
-    }
-}
-
 struct NewImage: View {
     @Environment(\.dismiss) private var dismiss
     @State private var viewModel = ViewModel()

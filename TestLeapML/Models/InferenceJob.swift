@@ -12,7 +12,7 @@ struct InferenceJob: Codable, Identifiable {
     let id, status, prompt, negativePrompt: String
     let seed, width, height, numberOfImages: Int
     let steps: Int
-    let createdAt: String
+    let createdAt: Date
     let promptStrength: Int
     let images: [InferenceImage]
     let modelID: String

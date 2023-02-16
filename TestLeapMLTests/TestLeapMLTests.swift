@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import TestLeapML
 
 final class TestLeapMLTests: XCTestCase {
 
@@ -35,17 +36,24 @@ final class TestLeapMLTests: XCTestCase {
     func testGenerateImageModel() {
         let url = Bundle(for: Self.self).url(forResource: "GenerateImage", withExtension: "json")
         let data = try! Data(contentsOf: url!)
-        let inference = try! JSONDecoder().decode(Inference.self, from: data)
+        let inference = try! Utils.makeDecoder().decode(Inference.self, from: data)
         XCTAssert(!inference.id.isEmpty)
         XCTAssert(inference.images.isEmpty)
         XCTAssert(!inference.modelID.isEmpty)
+        
+        // Not testing time, just testing day
+        let dateComponents = DateComponents(year: 2023, month: 2, day: 10)
+        let dateFromComponents = Calendar.current.date(from: dateComponents)!
+        XCTAssert(dateFromComponents == Calendar.current.startOfDay(for: inference.createdAt))
     }
 
     func testListInferenceModel() {
         let url = Bundle(for: Self.self).url(forResource: "ListInferenceJobs", withExtension: "json")
         let data = try! Data(contentsOf: url!)
-        let jobs = try! JSONDecoder().decode([InferenceJob].self, from: data)
+        let jobs = try! Utils.makeDecoder().decode([InferenceJob].self, from: data)
+        let sortedJobs = jobs.sorted(by: { $0.createdAt < $1.createdAt })
         XCTAssert(!jobs.isEmpty)
+        XCTAssert(sortedJobs.first!.createdAt < sortedJobs.last!.createdAt)
     }
 
     func testListInferenceService() async throws {

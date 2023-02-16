@@ -10,5 +10,5 @@ import Foundation
 struct InferenceImage: Codable {
     let id: String
     let uri: String
-    let createdAt: String
+    let createdAt: Date
 }

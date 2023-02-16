@@ -18,6 +18,6 @@ struct ListInferenceService: Service {
             throw ServiceError("Server error \(httpResponse.statusCode)")
         }
         
-        return try JSONDecoder().decode([InferenceJob].self, from: data)
+        return try Utils.makeDecoder().decode([InferenceJob].self, from: data)
     }
 }

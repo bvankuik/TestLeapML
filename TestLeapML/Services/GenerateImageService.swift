@@ -29,7 +29,7 @@ struct GenerateImageService: Service {
             throw ServiceError("Server error")
         }
         
-        return try JSONDecoder().decode(Inference.self, from: data)
+        return try Utils.makeDecoder().decode(Inference.self, from: data)
     }
 }
 
