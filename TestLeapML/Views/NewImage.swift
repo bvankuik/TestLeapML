@@ -25,7 +25,7 @@ struct NewImage: View {
     @Environment(\.dismiss) private var dismiss
     @State private var viewModel = ViewModel()
     let listViewModel: InferenceList.ViewModel
-
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -43,27 +43,30 @@ struct NewImage: View {
                 })
             }
             .toolbar {
-                Button("Submit") {
-                    self.dismiss()
-                    Task {
-                        let requestBody = GenerateImageService.RequestBody(newImageViewModel: self.viewModel)
-                        do {
-                            let newJob = try await GenerateImageService.call(requestBody: requestBody)
-                            if let index = self.listViewModel.jobs.firstIndex(where: { $0.id == newJob.id }) {
-                                // do nothing
-                                os_log("At index %d, already found new inference with ID = %@", log: .default, type: .info, index, newJob.id)
-                            } else {
-                                os_log("Refreshing to get new inference with ID = %@", log: .default, type: .info, newJob.id)
-                                self.listViewModel.refresh()
-                            }
-                        } catch {
-                            os_log("%@", log: .default, type: .info, error.localizedDescription)
-                            throw DisplayableError("Error calling GenerateImageService:\n\(error.localizedDescription)")
-                        }
-                    }
-                }.disabled(!self.viewModel.isValid)
+                Button("Submit", action: self.buttonAction)
+                    .disabled(!self.viewModel.isValid)
             }
             .navigationTitle("New image")
+        }
+    }
+    
+    private func buttonAction() {
+        self.dismiss()
+        Task {
+            let requestBody = GenerateImageService.RequestBody(newImageViewModel: self.viewModel)
+            do {
+                let newJob = try await GenerateImageService.call(requestBody: requestBody)
+                if let index = await self.listViewModel.jobs.firstIndex(where: { $0.id == newJob.id }) {
+                    // do nothing
+                    os_log("At index %d, already found new inference with ID = %@", log: .default, type: .info, index, newJob.id)
+                } else {
+                    os_log("Refreshing to get new inference with ID = %@", log: .default, type: .info, newJob.id)
+                    await self.listViewModel.refresh()
+                }
+            } catch {
+                os_log("%@", log: .default, type: .info, error.localizedDescription)
+                throw DisplayableError("Error calling GenerateImageService:\n\(error.localizedDescription)")
+            }
         }
     }
 }

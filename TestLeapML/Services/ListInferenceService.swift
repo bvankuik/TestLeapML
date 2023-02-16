@@ -11,7 +11,6 @@ import os.log
 struct ListInferenceService: Service {
     static func call() async throws -> [InferenceJob] {
         let request = makeRequest()
-        
         let (data, response) = try await URLSession.shared.data(for: request)
         
         if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
