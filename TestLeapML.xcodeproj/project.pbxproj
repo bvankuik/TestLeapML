@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89416A0E299E656200D46CDB /* NewImage+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89416A0D299E656200D46CDB /* NewImage+ViewModel.swift */; };
+		89852E0D29A4C1F90084EE08 /* Array+InferenceJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89852E0C29A4C1F90084EE08 /* Array+InferenceJob.swift */; };
 		89B92F1B299BB711008B1375 /* ErrorBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B92F1A299BB711008B1375 /* ErrorBar.swift */; };
 		89B92F1D299BB810008B1375 /* DisplayableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B92F1C299BB810008B1375 /* DisplayableError.swift */; };
 		89B92F1F299BC061008B1375 /* InferenceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B92F1E299BC061008B1375 /* InferenceDetail.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		89416A0D299E656200D46CDB /* NewImage+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewImage+ViewModel.swift"; sourceTree = "<group>"; };
+		89852E0C29A4C1F90084EE08 /* Array+InferenceJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+InferenceJob.swift"; sourceTree = "<group>"; };
 		89B92F1A299BB711008B1375 /* ErrorBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBar.swift; sourceTree = "<group>"; };
 		89B92F1C299BB810008B1375 /* DisplayableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableError.swift; sourceTree = "<group>"; };
 		89B92F1E299BC061008B1375 /* InferenceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceDetail.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89852E0B29A4C1A70084EE08 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89852E0C29A4C1F90084EE08 /* Array+InferenceJob.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		89B92F20299CE34F008B1375 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		89FC5EB229939613004340DE /* TestLeapML */ = {
 			isa = PBXGroup;
 			children = (
+				89852E0B29A4C1A70084EE08 /* Extensions */,
 				89B92F20299CE34F008B1375 /* ViewModels */,
 				89FC5F04299A504F004340DE /* Utils */,
 				89FC5EF8299A4CA8004340DE /* Models */,
@@ -323,6 +334,7 @@
 				89FC5EE0299396F8004340DE /* GenerateImageService.swift in Sources */,
 				89FC5EB429939613004340DE /* TestLeapMLApp.swift in Sources */,
 				89FC5EFA299A4CC5004340DE /* InferenceJob.swift in Sources */,
+				89852E0D29A4C1F90084EE08 /* Array+InferenceJob.swift in Sources */,
 				89416A0E299E656200D46CDB /* NewImage+ViewModel.swift in Sources */,
 				89FC5EE32993972B004340DE /* ServiceConstants.swift in Sources */,
 				89FC5EEC29953031004340DE /* ListInferenceService.swift in Sources */,

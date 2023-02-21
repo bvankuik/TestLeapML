@@ -15,7 +15,8 @@ extension InferenceList {
         func refresh() {
             Task {
                 do {
-                    self.jobs = try await ListInferenceService.call()
+                    let jobs = try await ListInferenceService.call()
+                    self.jobs = jobs.sortedNewestFirst()
                 } catch {
                     os_log("%@", log: .default, type: .info, error.localizedDescription)
                     throw DisplayableError("Error calling list inferences:\n\(error.localizedDescription)")
@@ -26,7 +27,7 @@ extension InferenceList {
         static var mock: ViewModel {
             let jobs = Utils.loadModel([InferenceJob].self, from: "ListInferences")
             let viewModel = ViewModel()
-            viewModel.jobs = jobs
+            viewModel.jobs = jobs.sortedNewestFirst()
             return viewModel
         }
     }

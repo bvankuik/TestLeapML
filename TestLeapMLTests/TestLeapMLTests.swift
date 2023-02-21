@@ -51,9 +51,9 @@ final class TestLeapMLTests: XCTestCase {
         let url = Bundle(for: Self.self).url(forResource: "ListInferenceJobs", withExtension: "json")
         let data = try! Data(contentsOf: url!)
         let jobs = try! Utils.makeDecoder().decode([InferenceJob].self, from: data)
-        let sortedJobs = jobs.sorted(by: { $0.createdAt < $1.createdAt })
+        let sortedJobs = jobs.sortedNewestFirst()
         XCTAssert(!jobs.isEmpty)
-        XCTAssert(sortedJobs.first!.createdAt < sortedJobs.last!.createdAt)
+        XCTAssert(sortedJobs[0].createdAt > sortedJobs[1].createdAt)
     }
 
     func testListInferenceService() async throws {
