@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import os.log
+import OSLog
 
 struct ListInferenceService: Service {
     static func call() async throws -> [InferenceJob] {
@@ -18,6 +18,13 @@ struct ListInferenceService: Service {
             throw ServiceError("Server error \(httpResponse.statusCode)")
         }
         
-        return try Utils.makeDecoder().decode([InferenceJob].self, from: data)
+        if let dataAsString = String(data: data, encoding: .utf8) {
+            os_log("Data received:\n%@", log: .default, type: .debug, dataAsString)
+        } else {
+            os_log("Data received could not be read as UTF", log: .default, type: .fault)
+        }
+        let jobs = try Utils.makeDecoder().decode([InferenceJob].self, from: data)
+        os_log("Received %d jobs", log: .default, type: .debug, jobs.count)
+        return jobs
     }
 }

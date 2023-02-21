@@ -56,11 +56,18 @@ struct InferenceDetail: View {
 }
 
 struct InferenceDetail_Previews: PreviewProvider {
-    static let jobs = Utils.loadModel([InferenceJob].self, from: "ListInferences")
+    static let job: InferenceJob = {
+        let jobs = Utils.loadModel([InferenceJob].self, from: "ListInferences")
+        if let index = jobs.firstIndex(where: { $0.id == "247ab4a1-8693-4939-aff9-d2decd111a8c" }) {
+            return jobs[index]
+        } else {
+            return jobs[0]
+        }
+    }()
     
     static var previews: some View {
         NavigationStack {
-            InferenceDetail(inferenceJob: jobs[0])
+            InferenceDetail(inferenceJob: Self.job)
         }
     }
 }

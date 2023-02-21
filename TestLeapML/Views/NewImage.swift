@@ -28,6 +28,11 @@ struct NewImage: View {
                 }, onDecrement: {
                     self.viewModel.promptStrength = max(0, self.viewModel.promptStrength - 1)
                 })
+                Stepper("Number of images: \(self.viewModel.numberOfImages)", onIncrement: {
+                    self.viewModel.numberOfImages = min(20, self.viewModel.numberOfImages + 1)
+                }, onDecrement: {
+                    self.viewModel.numberOfImages = max(1, self.viewModel.numberOfImages - 1)
+                })
             }
             .toolbar {
                 Button("Submit", action: self.buttonAction)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 // https://docs.leapml.dev/reference/inferencescontroller_create-1
 struct GenerateImageService: Service {
@@ -58,7 +59,7 @@ extension GenerateImageService.RequestBody {
         self.steps = newImageViewModel.steps
         self.width = 512
         self.height = 512
-        self.numberOfImages = 1
+        self.numberOfImages = newImageViewModel.numberOfImages
         self.promptStrength = newImageViewModel.promptStrength
         self.webhookUrl = nil
     }

@@ -13,6 +13,7 @@ extension NewImage {
         var negativePrompt = ""
         var steps = 50
         var promptStrength = 7
+        var numberOfImages = 1
         
         var isValid: Bool {
             !prompt.isEmpty
