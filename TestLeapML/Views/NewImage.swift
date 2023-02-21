@@ -32,6 +32,11 @@ struct NewImage: View {
             .toolbar {
                 Button("Submit", action: self.buttonAction)
                     .disabled(!self.viewModel.isValid)
+                    .accessibilityHint(
+                        self.viewModel.isValid
+                        ? "Submit parameters to create a new image"
+                        : "Fill in all parameters before you can submit"
+                    )
             }
             .navigationTitle("New image")
         }

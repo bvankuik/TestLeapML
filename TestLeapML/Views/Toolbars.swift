@@ -14,14 +14,24 @@ struct Toolbars: ToolbarContent {
     
     var body: some ToolbarContent {
         ToolbarItem(placement: .primaryAction) {
-            Button("New") {
+            Button {
                 self.isShowingNewImage.toggle()
+            } label: {
+                Image(systemName: "plus")
+                    .imageScale(.large)
             }
+            .accessibilityLabel(Text("Create"))
+            .accessibilityHint("Create new image")
         }
         ToolbarItem(placement: .primaryAction) {
-            Button("Reload") {
+            Button {
                 self.listViewModel.refresh()
+            } label: {
+                Image(systemName: "arrow.clockwise")
+                    .imageScale(.large)
             }
+            .accessibilityLabel(Text("Reload"))
+            .accessibilityHint("Refresh list of images")
         }
     }
 }
