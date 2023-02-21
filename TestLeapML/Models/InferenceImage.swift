@@ -7,8 +7,11 @@
 
 import Foundation
 
-struct InferenceImage: Codable {
+struct InferenceImage: Codable, Identifiable {
     let id: String
     let uri: String
     let createdAt: Date
+    var url: URL? {
+        URL(string: self.uri)
+    }
 }
