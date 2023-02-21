@@ -13,7 +13,7 @@ extension InferenceList {
         
         var body: some View {
             VStack {
-                Text(job.id)
+                Text(job.prompt)
                     .lineLimit(1)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Text(job.createdAt.formatted(.dateTime))

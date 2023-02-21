@@ -10,8 +10,8 @@ import SwiftUI
 struct InferenceDetail: View {
     let inferenceJob: InferenceJob
     var body: some View {
-        VStack {
-            Gallery(images: self.inferenceJob.images)
+        VStack(spacing: 0) {
+            Gallery(imageURLs: self.inferenceJob.images.map { $0.url })
             List {
                 HStack {
                     Text("Prompt")
@@ -21,7 +21,7 @@ struct InferenceDetail: View {
                 HStack {
                     Text("Negative prompt")
                     Spacer()
-                    Text(self.inferenceJob.negativePrompt)
+                    Text(self.inferenceJob.negativePrompt.dashIfEmpty)
                 }
                 HStack {
                     Text("Status")
@@ -50,7 +50,7 @@ struct InferenceDetail: View {
                 }
             }
         }
-        .navigationTitle("Job \(self.inferenceJob.id)")
+        .navigationTitle(self.inferenceJob.prompt)
     }
     
 }
@@ -59,6 +59,8 @@ struct InferenceDetail_Previews: PreviewProvider {
     static let jobs = Utils.loadModel([InferenceJob].self, from: "ListInferences")
     
     static var previews: some View {
-        InferenceDetail(inferenceJob: jobs[0])
+        NavigationStack {
+            InferenceDetail(inferenceJob: jobs[0])
+        }
     }
 }
