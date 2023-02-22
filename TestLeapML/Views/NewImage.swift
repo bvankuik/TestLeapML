@@ -18,6 +18,14 @@ struct NewImage: View {
             Form {
                 TextField("Prompt", text: self.$viewModel.prompt)
                 TextField("Negative prompt", text: self.$viewModel.negativePrompt)
+                VStack {
+                    HStack {
+                        Text("Size:")
+                        Spacer()
+                        Text(self.viewModel.resolution.sizeString)
+                    }
+                    ResolutionPicker(selection: self.$viewModel.resolution)
+                }
                 Stepper("Steps: \(self.viewModel.steps)", onIncrement: {
                     self.viewModel.steps = min(50, self.viewModel.steps + 1)
                 }, onDecrement: {

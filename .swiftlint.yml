@@ -1,0 +1,9 @@
+disabled_rules:
+  - trailing_whitespace
+
+type_name:
+  allowed_symbols: ["_"] # these are allowed in type names
+identifier_name:
+  min_length: # only min_length
+    error: 1 # only error
+    warning: 1 # only error

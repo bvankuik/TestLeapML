@@ -11,6 +11,7 @@ extension NewImage {
     struct ViewModel {
         var prompt = ""
         var negativePrompt = ""
+        var resolution = ResolutionPicker.resolutions[0]
         var steps = 50
         var promptStrength = 7
         var numberOfImages = 1

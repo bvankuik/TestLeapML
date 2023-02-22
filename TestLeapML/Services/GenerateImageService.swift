@@ -17,17 +17,21 @@ struct GenerateImageService: Service {
             throw ServiceError("Error encoding body")
         }
         
-        print(String(data: httpBody, encoding: .utf8)!)
+        if let bodyString = String(data: httpBody, encoding: .utf8) {
+            os_log("Submitting request to generate image with body:\n%@", log: .default, type: .debug, bodyString)
+        }
         request.httpMethod = "POST"
         request.httpBody = httpBody
 
         let (data, response) = try await URLSession.shared.data(for: request)
         if let httpResponse = response as? HTTPURLResponse,
            !([200, 201].contains(httpResponse.statusCode)) {
-            
-            print(String(data: data, encoding: .utf8)!)
-            print("Server statusCode = \(httpResponse.statusCode)")
-            throw ServiceError("Server error")
+
+            os_log("Server statusCode: %d", log: .default, type: .debug, httpResponse.statusCode)
+            if let responseString = String(data: data, encoding: .utf8) {
+                os_log("Response:\n%@", log: .default, type: .debug, responseString)
+            }
+            throw ServiceError("Server error, status code: \(httpResponse.statusCode)")
         }
         
         return try Utils.makeDecoder().decode(Inference.self, from: data)
@@ -57,8 +61,8 @@ extension GenerateImageService.RequestBody {
         self.negativePrompt = newImageViewModel.negativePrompt
         self.version = nil
         self.steps = newImageViewModel.steps
-        self.width = 512
-        self.height = 512
+        self.width = newImageViewModel.resolution.width
+        self.height = newImageViewModel.resolution.height
         self.numberOfImages = newImageViewModel.numberOfImages
         self.promptStrength = newImageViewModel.promptStrength
         self.webhookUrl = nil
