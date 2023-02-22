@@ -18,7 +18,8 @@ struct Inference: Codable {
     let modelID: String
 
     enum CodingKeys: String, CodingKey {
-        case id, createdAt, prompt, negativePrompt, seed, width, height, promptStrength, numberOfImages, status, steps, images
+        case id, createdAt, prompt, negativePrompt, seed, width, height, promptStrength, numberOfImages, status,
+             steps, images
         case modelID = "modelId"
     }
 }

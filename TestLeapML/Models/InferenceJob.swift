@@ -18,7 +18,8 @@ struct InferenceJob: Codable, Identifiable {
     let modelID: String
 
     enum CodingKeys: String, CodingKey {
-        case id, status, prompt, negativePrompt, seed, width, height, numberOfImages, steps, createdAt, promptStrength, images
+        case id, status, prompt, negativePrompt, seed, width, height, numberOfImages, steps, createdAt, promptStrength,
+             images
         case modelID = "modelId"
     }
 }

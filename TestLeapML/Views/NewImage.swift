@@ -63,7 +63,12 @@ struct NewImage: View {
                 let newJob = try await GenerateImageService.call(requestBody: requestBody)
                 if let index = await self.listViewModel.jobs.firstIndex(where: { $0.id == newJob.id }) {
                     // do nothing
-                    os_log("At index %d, already found new inference with ID = %@", log: .default, type: .info, index, newJob.id)
+                    os_log(
+                        "At index %d, already found new inference with ID = %@",
+                        log: .default,
+                        type: .info,
+                        index, newJob.id
+                    )
                 } else {
                     os_log("Refreshing to get new inference with ID = %@", log: .default, type: .info, newJob.id)
                     await self.listViewModel.refresh()

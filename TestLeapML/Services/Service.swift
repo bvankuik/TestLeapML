@@ -30,7 +30,7 @@ extension Service {
         request.allHTTPHeaderFields = [
             "accept": "application/json",
             "content-type": "application/json",
-            "authorization": "Bearer \(apiKey)",
+            "authorization": "Bearer \(apiKey)"
         ]
         return request
     }

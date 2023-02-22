@@ -10,8 +10,12 @@ import Foundation
 struct Utils {
     static func loadModel<T: Decodable>(_ type: T.Type, from jsonResource: String) -> T {
         let url = Bundle.main.url(forResource: jsonResource, withExtension: "json")
-        let data = try! Data(contentsOf: url!)
-        let model = try! Self.makeDecoder().decode(T.self, from: data)
+        guard let data = try? Data(contentsOf: url!) else {
+            fatalError("Could not load URL")
+        }
+        guard let model = try? Self.makeDecoder().decode(T.self, from: data) else {
+            fatalError("Could not decode model")
+        }
         return model
     }
     

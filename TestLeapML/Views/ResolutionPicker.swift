@@ -36,7 +36,7 @@ struct ResolutionPicker: View {
         Resolution(description: "VGA", width: 640, height: 480),
         Resolution(description: "XGA", width: 1024, height: 768),
         Resolution(description: "Full HD", width: 1920, height: 1080),
-        Resolution(description: "4K", width: 3840, height: 2160),
+        Resolution(description: "4K", width: 3840, height: 2160)
     ]
     @Binding var selection: Resolution
     
