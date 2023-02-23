@@ -28,7 +28,6 @@ If you see the following line in the Xcode console, there's something wrong with
 # Shortcomings
 
 * Layout on macOS/iPad is bad
-* Automatic refresh upon startup is missing
 * Some sort of loading indicator should be shown
 * When a job is queued, we should indicate this, and not navigate
 * Fastlane is useful
