@@ -27,9 +27,12 @@ If you see the following line in the Xcode console, there's something wrong with
 
 # Shortcomings
 
-* There's a weird info.plist warning when compiling
+* Layout on macOS/iPad is bad
 * Automatic refresh upon startup is missing
 * Some sort of loading indicator should be shown
 * When a job is queued, we should indicate this, and not navigate
 * Fastlane is useful
 * Errors are thrown and not reported to the user
+* Swiftlint is used but to prevent Xcode warnings, the file list generation script is used from
+  [steven851007](https://github.com/steven851007/SwiftLint_build_phase_example#project-setup)
+

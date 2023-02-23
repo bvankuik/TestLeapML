@@ -23,7 +23,6 @@
 		89FC5EC629939615004340DE /* TestLeapMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EC529939615004340DE /* TestLeapMLTests.swift */; };
 		89FC5EE0299396F8004340DE /* GenerateImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EDF299396F8004340DE /* GenerateImageService.swift */; };
 		89FC5EE32993972B004340DE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EE22993972B004340DE /* ServiceConstants.swift */; };
-		89FC5EE72993E15D004340DE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EE62993E060004340DE /* Info.plist */; platformFilters = (macos, ); };
 		89FC5EE929952C37004340DE /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EE829952C37004340DE /* ServiceError.swift */; };
 		89FC5EEC29953031004340DE /* ListInferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EEB29953031004340DE /* ListInferenceService.swift */; };
 		89FC5EEF299535FF004340DE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EEE299535FF004340DE /* Service.swift */; };
@@ -309,7 +308,6 @@
 				89FC5EBC29939615004340DE /* Preview Assets.xcassets in Resources */,
 				89FC5F03299A5037004340DE /* ListInferences.json in Resources */,
 				89FC5EB829939615004340DE /* Assets.xcassets in Resources */,
-				89FC5EE72993E15D004340DE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

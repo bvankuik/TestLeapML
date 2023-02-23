@@ -8,10 +8,24 @@
 import SwiftUI
 
 extension InferenceDetail {
-    struct Gallery: View {
+    struct Gallery_macOS: View {
         let imageURLs: [URL?]
         
         var body: some View {
+            HStack {
+                ForEach(self.imageURLs, id: \.self) { imageURL in
+                    AsyncImage(url: imageURL)
+                        .aspectRatio(contentMode: .fit)
+                }
+            }
+        }
+    }
+    
+    struct Gallery_iOS: View {
+        let imageURLs: [URL?]
+        
+        var body: some View {
+#if !os(macOS)
             TabView {
                 ForEach(self.imageURLs, id: \.self) { imageURL in
                     AsyncImage(url: imageURL)
@@ -19,6 +33,19 @@ extension InferenceDetail {
                 }
             }
             .tabViewStyle(PageTabViewStyle())
+#endif
+        }
+    }
+    
+    struct Gallery: View {
+        let imageURLs: [URL?]
+        
+        var body: some View {
+#if os(macOS)
+            Gallery_macOS(imageURLs: self.imageURLs)
+#else
+            Gallery_iOS(imageURLs: self.imageURLs)
+#endif
         }
     }
 }
