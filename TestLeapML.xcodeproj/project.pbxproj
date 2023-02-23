@@ -234,7 +234,7 @@
 				89FC5EAC29939613004340DE /* Sources */,
 				89FC5EAD29939613004340DE /* Frameworks */,
 				89FC5EAE29939613004340DE /* Resources */,
-				89400C4129A668F500E13EB8 /* ShellScript */,
+				89400C4129A668F500E13EB8 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -325,18 +325,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		89400C4129A668F500E13EB8 /* ShellScript */ = {
+		89400C4129A668F500E13EB8 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"$(SRCROOT)/build/build_phases/TestLeapML_swiftlint.xcfilelist",
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(SRCROOT)/build/build_phases/TestLeapML_swiftlint_static_output",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

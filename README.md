@@ -28,11 +28,8 @@ If you see the following line in the Xcode console, there's something wrong with
 # Shortcomings
 
 * There's a weird info.plist warning when compiling
-* Automatic  refresh upon startup is missing
+* Automatic refresh upon startup is missing
 * Some sort of loading indicator should be shown
-* The size parameter must be adjustable
 * When a job is queued, we should indicate this, and not navigate
-* We should use SwiftLint
 * Fastlane is useful
-* print() statements all over the place
-* Errors are thrown and not reported
+* Errors are thrown and not reported to the user

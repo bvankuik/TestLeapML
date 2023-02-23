@@ -24,10 +24,13 @@ struct GenerateImageService: Service {
         request.httpBody = httpBody
 
         let (data, response) = try await URLSession.shared.data(for: request)
-        if let httpResponse = response as? HTTPURLResponse,
-           !([200, 201].contains(httpResponse.statusCode)) {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw ServiceError("URL response is not HTTPURLResponse")
+        }
+        os_log("Server statusCode: %d", log: .default, type: .debug, httpResponse.statusCode)
 
-            os_log("Server statusCode: %d", log: .default, type: .debug, httpResponse.statusCode)
+        if !([200, 201].contains(httpResponse.statusCode)) {
+            os_log("Unexpected server statusCode: %d", log: .default, type: .error, httpResponse.statusCode)
             if let responseString = String(data: data, encoding: .utf8) {
                 os_log("Response:\n%@", log: .default, type: .debug, responseString)
             }
