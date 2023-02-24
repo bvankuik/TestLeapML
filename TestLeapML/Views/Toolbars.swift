@@ -23,16 +23,16 @@ struct Toolbars: ToolbarContent {
             .accessibilityLabel(Text("Create"))
             .accessibilityHint("Create new image")
         }
-        ToolbarItem(placement: .primaryAction) {
-            Button {
-                self.listViewModel.refresh()
-            } label: {
-                Image(systemName: "arrow.clockwise")
-                    .imageScale(.large)
-            }
-            .accessibilityLabel(Text("Reload"))
-            .accessibilityHint("Refresh list of images")
-        }
+//        ToolbarItem(placement: .primaryAction) {
+//            Button {
+//                self.listViewModel.refresh()
+//            } label: {
+//                Image(systemName: "arrow.clockwise")
+//                    .imageScale(.large)
+//            }
+//            .accessibilityLabel(Text("Reload"))
+//            .accessibilityHint("Refresh list of images")
+//        }
     }
 }
 

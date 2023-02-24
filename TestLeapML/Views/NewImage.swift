@@ -71,7 +71,7 @@ struct NewImage: View {
                     )
                 } else {
                     os_log("Refreshing to get new inference with ID = %@", log: .default, type: .info, newJob.id)
-                    await self.listViewModel.refresh()
+                    try await self.listViewModel.refresh()
                 }
             } catch {
                 os_log("%@", log: .default, type: .info, error.localizedDescription)

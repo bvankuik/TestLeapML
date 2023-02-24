@@ -12,15 +12,13 @@ extension InferenceList {
     @MainActor class ViewModel: ObservableObject {
         @Published var jobs: [InferenceJob] = []
         
-        func refresh() {
-            Task {
-                do {
-                    let jobs = try await ListInferenceService.call()
-                    self.jobs = jobs.sortedNewestFirst()
-                } catch {
-                    os_log("%@", log: .default, type: .info, error.localizedDescription)
-                    throw DisplayableError("Error calling list inferences:\n\(error.localizedDescription)")
-                }
+        func refresh() async throws {
+            do {
+                let jobs = try await ListInferenceService.call()
+                self.jobs = jobs.sortedNewestFirst()
+            } catch {
+                os_log("%@", log: .default, type: .info, error.localizedDescription)
+                throw DisplayableError("Error calling list inferences:\n\(error.localizedDescription)")
             }
         }
         
