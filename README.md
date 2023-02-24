@@ -3,6 +3,10 @@
 This is a demo app that allows you to play around with the [LeapML](https://www.leapml.dev/)
 API. See also the [API documentation](https://docs.leapml.dev/).
 
+The logo is a still life with a cabbage. This image was generated with the app.
+
+![Logo of still life with a cabbage](!logo_still_life_with_a_cabbage.png)
+
 # Current capabilities
 
 * Request an image
@@ -27,6 +31,7 @@ If you see the following line in the Xcode console, there's something wrong with
 
 # Shortcomings
 
+* No pull-to-refresh
 * Layout on macOS/iPad is bad
 * Some sort of loading indicator should be shown
 * When a job is queued, we should indicate this, and not navigate
