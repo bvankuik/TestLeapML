@@ -5,7 +5,7 @@ API. See also the [API documentation](https://docs.leapml.dev/).
 
 The logo is a still life with a cabbage. This image was generated with the app.
 
-![Logo of still life with a cabbage](!logo_still_life_with_a_cabbage.png)
+![Logo of still life with a cabbage](!https://raw.githubusercontent.com/bvankuik/TestLeapML/main/logo_still_life_with_a_cabbage.png)
 
 # Current capabilities
 
