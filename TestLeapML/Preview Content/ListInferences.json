@@ -305,7 +305,7 @@
     },
     {
         "id": "247ab4a1-8693-4939-aff9-d2decd111a8c",
-        "status": "finished",
+        "status": "queued",
         "prompt": "Still life with a cabbage and a rainbow",
         "negativePrompt": "",
         "seed": 26030,

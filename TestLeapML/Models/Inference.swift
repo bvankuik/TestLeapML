@@ -13,7 +13,7 @@ struct Inference: Codable {
     let createdAt: Date
     let seed, width, height, promptStrength: Int
     let numberOfImages, steps: Int
-    let status: String // queued
+    let status: Status
     let images: [String]
     let modelID: String
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		892277DF29A7B68100881129 /* InferenceListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892277DE29A7B68100881129 /* InferenceListContainer.swift */; };
+		893015FA29ACADD00094A08A /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893015F929ACADD00094A08A /* Status.swift */; };
 		89416A0E299E656200D46CDB /* NewImage+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89416A0D299E656200D46CDB /* NewImage+ViewModel.swift */; };
 		89852E0D29A4C1F90084EE08 /* Array+InferenceJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89852E0C29A4C1F90084EE08 /* Array+InferenceJob.swift */; };
 		89852E0F29A4C60E0084EE08 /* InferenceDetail+Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89852E0E29A4C60E0084EE08 /* InferenceDetail+Gallery.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		892277DE29A7B68100881129 /* InferenceListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceListContainer.swift; sourceTree = "<group>"; };
+		893015F929ACADD00094A08A /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		89416A0D299E656200D46CDB /* NewImage+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewImage+ViewModel.swift"; sourceTree = "<group>"; };
 		89852E0C29A4C1F90084EE08 /* Array+InferenceJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+InferenceJob.swift"; sourceTree = "<group>"; };
 		89852E0E29A4C60E0084EE08 /* InferenceDetail+Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InferenceDetail+Gallery.swift"; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				89FC5EF9299A4CC5004340DE /* InferenceJob.swift */,
 				89FC5EFB299A4CE9004340DE /* InferenceImage.swift */,
 				89FC5EFD299A4D77004340DE /* Inference.swift */,
+				893015F929ACADD00094A08A /* Status.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				8995571C29A8B617003965D8 /* ProgressContainer.swift in Sources */,
 				89B92F1F299BC061008B1375 /* InferenceDetail.swift in Sources */,
 				892277DF29A7B68100881129 /* InferenceListContainer.swift in Sources */,
+				893015FA29ACADD00094A08A /* Status.swift in Sources */,
 				89FC5F08299A6118004340DE /* Toolbars.swift in Sources */,
 				89852E1129A4D3DF0084EE08 /* String+Utils.swift in Sources */,
 				89FC5EFE299A4D77004340DE /* Inference.swift in Sources */,

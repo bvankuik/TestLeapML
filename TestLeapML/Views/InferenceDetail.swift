@@ -26,7 +26,7 @@ struct InferenceDetail: View {
                 HStack {
                     Text("Status")
                     Spacer()
-                    Text(self.inferenceJob.status)
+                    Text(self.inferenceJob.status.rawValue.capitalized)
                 }
                 HStack {
                     Text("Width × Height")

@@ -9,7 +9,8 @@ import Foundation
 
 // An inference job has images that include an URI
 struct InferenceJob: Codable, Identifiable {
-    let id, status, prompt, negativePrompt: String
+    let id, prompt, negativePrompt: String
+    let status: Status
     let seed, width, height, numberOfImages: Int
     let steps: Int
     let createdAt: Date

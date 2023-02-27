@@ -16,9 +16,16 @@ extension InferenceList {
                 Text(job.prompt)
                     .lineLimit(1)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text(job.createdAt.formatted(.dateTime))
-                    .font(.caption)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                HStack {
+                    Text(job.createdAt.formatted(.dateTime))
+                        .font(.caption)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer()
+                    if self.job.status == .queued {
+                        Text("Queued")
+                            .font(.caption)
+                    }
+                }
             }
         }
     }
@@ -29,11 +36,15 @@ struct InferenceList: View {
     
     var body: some View {
         List(self.viewModel.jobs) { job in
-            NavigationLink(destination: {
-                InferenceDetail(inferenceJob: job)
-            }, label: {
+            if job.status == .finished {
+                NavigationLink(destination: {
+                    InferenceDetail(inferenceJob: job)
+                }, label: {
+                    RowLabel(job: job)
+                })
+            } else {
                 RowLabel(job: job)
-            })
+            }
         }
         .navigationTitle("Inference jobs")
     }
