@@ -9,6 +9,7 @@ import SwiftUI
 import OSLog
 
 struct Toolbars: ToolbarContent {
+    @Environment(\.accessibilityEnabled) private var accessibilityEnabled
     @Binding var isShowingNewImage: Bool
     @ObservedObject var listViewModel: InferenceList.ViewModel
     
@@ -23,16 +24,24 @@ struct Toolbars: ToolbarContent {
             .accessibilityLabel(Text("Create"))
             .accessibilityHint("Create new image")
         }
-//        ToolbarItem(placement: .primaryAction) {
-//            Button {
-//                self.listViewModel.refresh()
-//            } label: {
-//                Image(systemName: "arrow.clockwise")
-//                    .imageScale(.large)
-//            }
-//            .accessibilityLabel(Text("Reload"))
-//            .accessibilityHint("Refresh list of images")
-//        }
+        if self.accessibilityEnabled {
+            ToolbarItem(placement: .primaryAction) {
+                Button {
+                    Task {
+                        do {
+                            try await self.listViewModel.refresh()
+                        } catch {
+                            os_log("Failed refresh button: %@", log: .default, type: .info, error.localizedDescription)
+                        }
+                    }
+                } label: {
+                    Image(systemName: "arrow.clockwise")
+                        .imageScale(.large)
+                }
+                .accessibilityLabel(Text("Refresh"))
+                .accessibilityHint("Refresh list of images")
+            }
+        }
     }
 }
 

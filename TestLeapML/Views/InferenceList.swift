@@ -5,6 +5,7 @@
 //  Created by Bart van Kuik on 13/02/2023.
 //
 
+import OSLog
 import SwiftUI
 
 extension InferenceList {
@@ -44,6 +45,13 @@ struct InferenceList: View {
                 })
             } else {
                 RowLabel(job: job)
+            }
+        }
+        .refreshable {
+            do {
+                try await self.viewModel.refresh()
+            } catch {
+                os_log("Failed pull-to-refresh: %@", log: .default, type: .info, error.localizedDescription)
             }
         }
         .navigationTitle("Inference jobs")

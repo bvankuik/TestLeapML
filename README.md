@@ -31,12 +31,11 @@ If you see the following line in the Xcode console, there's something wrong with
 
 # Shortcomings
 
-* When a job is queued, we should periodically refresh
-* Add pull-to-refresh
+* When a job is queued, we should periodically refresh; perhaps with Combine?
 * Layout on macOS/iPad is bad
 * Some sort of loading indicator should be shown when generating images and loading them
 * Fastlane is useful
-* Errors are thrown and not reported to the user
+* Errors are logged but not reported to the user
 * Swiftlint is used but to prevent Xcode warnings, the file list generation script is used from
   [steven851007](https://github.com/steven851007/SwiftLint_build_phase_example#project-setup)
 
