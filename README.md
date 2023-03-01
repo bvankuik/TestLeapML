@@ -9,9 +9,9 @@ The logo is a still life with a cabbage. This image was generated with the app.
 
 # Current capabilities
 
-* Request an image
-* List all results
-* View a single result
+* Request an inference (i.e. combination of prompt and one or more images)
+* List all inference jobs
+* View an inference with its one or more images
 
 # Building and running
 
@@ -31,13 +31,13 @@ If you see the following line in the Xcode console, there's something wrong with
 
 # Shortcomings
 
+* Fastlane is useful
+* When a job is queued, we should periodically refresh; perhaps with Combine?
 * No way of searching
 * Prompts should be typed in, but perhaps there's a faster way, like in
   [this article](https://sowenjub.me/writes/searchable-vs-textfield-in-a-sheet-deployed-with-presentationdetents)
-* When a job is queued, we should periodically refresh; perhaps with Combine?
 * There should be a share button for images
 * Layout on macOS/iPad is bad
 * Some sort of loading indicator should be shown when generating images and loading them
-* Fastlane is useful
 * Errors are logged but not reported to the user
 

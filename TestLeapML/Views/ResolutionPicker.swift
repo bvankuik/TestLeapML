@@ -25,7 +25,7 @@ extension ResolutionPicker {
             self.hashValue
         }
         var sizeString: String {
-            self == Self.emptySelection ? "" : "\(width)x\(height)"
+            self == Self.emptySelection ? "" : "\(width)×\(height)"
         }
         static let emptySelection = Resolution(description: "", width: 0, height: 0)
     }
@@ -33,10 +33,10 @@ extension ResolutionPicker {
 
 struct ResolutionPicker: View {
     static let resolutions: [Resolution] = [
-        Resolution(description: "VGA", width: 640, height: 480),
-        Resolution(description: "XGA", width: 1024, height: 768),
-        Resolution(description: "Full HD", width: 1920, height: 1080),
-        Resolution(description: "4K", width: 3840, height: 2160)
+        Resolution(description: "512×512", width: 512, height: 512),
+        Resolution(description: "800×600", width: 800, height: 600),
+        Resolution(description: "1024×768", width: 1024, height: 768),
+        Resolution(description: "1024×1024", width: 1024, height: 1024)
     ]
     @Binding var selection: Resolution
     
