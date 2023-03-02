@@ -1,67 +1,67 @@
 {
   "images" : [
     {
-      "filename" : "still_life_with_a_cabbage_1024.png",
+      "filename" : "appicon_1024.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
     },
     {
-      "filename" : "still_life_with_a_cabbage_16.png",
+      "filename" : "appicon_16.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "still_life_with_a_cabbage_32.png",
+      "filename" : "appicon_16_2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "still_life_with_a_cabbage_32 1.png",
+      "filename" : "appicon_32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "still_life_with_a_cabbage_64.png",
+      "filename" : "appicon_32_2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
-      "filename" : "still_life_with_a_cabbage_128.png",
+      "filename" : "appicon_128.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "still_life_with_a_cabbage_256.png",
+      "filename" : "appicon_128_2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "still_life_with_a_cabbage_256 1.png",
+      "filename" : "appicon_256.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "still_life_with_a_cabbage.png",
+      "filename" : "appicon_256_2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "still_life_with_a_cabbage 1.png",
+      "filename" : "appicon_512.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "still_life_with_a_cabbage_1024 1.png",
+      "filename" : "appicon_512_2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
