@@ -32,6 +32,7 @@ If you see the following line in the Xcode console, there's something wrong with
 # Shortcomings
 
 * Fastlane is useful
+* Add sharing
 * When a job is queued, we should periodically refresh; perhaps with Combine?
 * No way of searching
 * Prompts should be typed in, but perhaps there's a faster way, like in

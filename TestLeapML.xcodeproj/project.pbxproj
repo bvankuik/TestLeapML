@@ -66,7 +66,7 @@
 		89B92F1C299BB810008B1375 /* DisplayableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableError.swift; sourceTree = "<group>"; };
 		89B92F1E299BC061008B1375 /* InferenceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceDetail.swift; sourceTree = "<group>"; };
 		89B92F21299CE363008B1375 /* InferenceList+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InferenceList+ViewModel.swift"; sourceTree = "<group>"; };
-		89FC5EB029939613004340DE /* TestLeapML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestLeapML.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89FC5EB029939613004340DE /* AI Canvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI Canvas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FC5EB329939613004340DE /* TestLeapMLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLeapMLApp.swift; sourceTree = "<group>"; };
 		89FC5EB529939613004340DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		89FC5EB729939615004340DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		89FC5EB129939613004340DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				89FC5EB029939613004340DE /* TestLeapML.app */,
+				89FC5EB029939613004340DE /* AI Canvas.app */,
 				89FC5EC129939615004340DE /* TestLeapMLTests.xctest */,
 			);
 			name = Products;
@@ -252,7 +252,7 @@
 			);
 			name = TestLeapML;
 			productName = TestLeapML;
-			productReference = 89FC5EB029939613004340DE /* TestLeapML.app */;
+			productReference = 89FC5EB029939613004340DE /* AI Canvas.app */;
 			productType = "com.apple.product-type.application";
 		};
 		89FC5EC029939615004340DE /* TestLeapMLTests */ = {
@@ -505,10 +505,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TestLeapML/TestLeapML.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TestLeapML/Preview Content\"";
-				DEVELOPMENT_TEAM = 6388G8CZ8F;
+				DEVELOPMENT_TEAM = MH8GQLL8BR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestLeapML/Info.plist;
@@ -527,8 +528,8 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nl.dutchvirtual.TestLeapML;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.dutchvirtual.aicanvas;
+				PRODUCT_NAME = "AI Canvas";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -544,10 +545,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TestLeapML/TestLeapML.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TestLeapML/Preview Content\"";
-				DEVELOPMENT_TEAM = 6388G8CZ8F;
+				DEVELOPMENT_TEAM = MH8GQLL8BR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestLeapML/Info.plist;
@@ -566,8 +568,8 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nl.dutchvirtual.TestLeapML;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.dutchvirtual.aicanvas;
+				PRODUCT_NAME = "AI Canvas";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
