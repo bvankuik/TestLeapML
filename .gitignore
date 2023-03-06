@@ -1,2 +1,10 @@
 Config.xcconfig
 TestLeapML.xcodeproj/xcuserdata/**/xcdebugger
+fastlane/.env.default
+fastlane/report.xml
+
+5Q93QLFHR3.*
+AI Canvas.ipa
+AI Canvas.app
+AI Canvas.app.dSYM.zip
+AppStore_nl.dutchvirtual.aicanvas.mobileprovision
