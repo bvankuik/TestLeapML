@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LeapML
 
 struct InferenceListContainer: View {
     @ObservedObject var viewModel: InferenceList.ViewModel

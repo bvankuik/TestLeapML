@@ -7,6 +7,7 @@
 
 import OSLog
 import SwiftUI
+import LeapML
 
 struct NewImage: View {
     @Environment(\.dismiss) private var dismiss
@@ -58,7 +59,15 @@ struct NewImage: View {
     private func buttonAction() {
         self.dismiss()
         Task {
-            let requestBody = GenerateImageService.RequestBody(newImageViewModel: self.viewModel)
+            let requestBody = GenerateImageService.RequestBody(
+                prompt: self.viewModel.prompt,
+                negativePrompt: self.viewModel.negativePrompt,
+                steps: self.viewModel.steps,
+                width: self.viewModel.resolution.width,
+                height: self.viewModel.resolution.height,
+                numberOfImages: self.viewModel.numberOfImages,
+                promptStrength: self.viewModel.promptStrength
+            )
             do {
                 let newJob = try await GenerateImageService.call(requestBody: requestBody)
                 if let index = await self.listViewModel.jobs.firstIndex(where: { $0.id == newJob.id }) {

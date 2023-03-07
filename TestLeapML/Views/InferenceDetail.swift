@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LeapML
 
 struct InferenceDetail: View {
     let inferenceJob: InferenceJob

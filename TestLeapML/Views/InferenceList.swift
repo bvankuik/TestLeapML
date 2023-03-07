@@ -7,6 +7,7 @@
 
 import OSLog
 import SwiftUI
+import LeapML
 
 extension InferenceList {
     struct RowLabel: View {

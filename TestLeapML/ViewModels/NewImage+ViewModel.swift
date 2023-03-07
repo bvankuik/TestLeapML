@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LeapML
 
 extension NewImage {
     struct ViewModel {

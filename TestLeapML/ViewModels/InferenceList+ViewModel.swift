@@ -7,6 +7,7 @@
 
 import SwiftUI
 import OSLog
+import LeapML
 
 extension InferenceList {
     @MainActor class ViewModel: ObservableObject {

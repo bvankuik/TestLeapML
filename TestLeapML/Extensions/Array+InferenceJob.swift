@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LeapML
 
 extension Array where Element == InferenceJob {
     func sortedNewestFirst() -> Self {
