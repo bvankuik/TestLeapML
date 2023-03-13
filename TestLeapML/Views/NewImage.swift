@@ -5,7 +5,6 @@
 //  Created by Bart van Kuik on 13/02/2023.
 //
 
-import OSLog
 import SwiftUI
 import LeapML
 
@@ -58,35 +57,16 @@ struct NewImage: View {
     
     private func buttonAction() {
         self.dismiss()
-        Task {
-            let requestBody = GenerateImageService.RequestBody(
-                prompt: self.viewModel.prompt,
-                negativePrompt: self.viewModel.negativePrompt,
-                steps: self.viewModel.steps,
-                width: self.viewModel.resolution.width,
-                height: self.viewModel.resolution.height,
-                numberOfImages: self.viewModel.numberOfImages,
-                promptStrength: self.viewModel.promptStrength
-            )
-            do {
-                let newJob = try await GenerateImageService.call(requestBody: requestBody)
-                if let index = await self.listViewModel.jobs.firstIndex(where: { $0.id == newJob.id }) {
-                    // do nothing
-                    os_log(
-                        "At index %d, already found new inference with ID = %@",
-                        log: .default,
-                        type: .info,
-                        index, newJob.id
-                    )
-                } else {
-                    os_log("Refreshing to get new inference with ID = %@", log: .default, type: .info, newJob.id)
-                    try await self.listViewModel.refresh()
-                }
-            } catch {
-                os_log("%@", log: .default, type: .info, error.localizedDescription)
-                throw DisplayableError("Error calling GenerateImageService:\n\(error.localizedDescription)")
-            }
-        }
+        let requestBody = GenerateImageService.RequestBody(
+            prompt: self.viewModel.prompt,
+            negativePrompt: self.viewModel.negativePrompt,
+            steps: self.viewModel.steps,
+            width: self.viewModel.resolution.width,
+            height: self.viewModel.resolution.height,
+            numberOfImages: self.viewModel.numberOfImages,
+            promptStrength: self.viewModel.promptStrength
+        )
+        GenerateImageTask.run(requestBody: requestBody, listViewModel: self.listViewModel)
     }
 }
 

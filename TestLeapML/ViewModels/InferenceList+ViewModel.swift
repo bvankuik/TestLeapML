@@ -10,16 +10,24 @@ import OSLog
 import LeapML
 
 extension InferenceList {
-    @MainActor class ViewModel: ObservableObject {
+    @MainActor class ViewModel: ObservableObject, HasRequestStatus {
         @Published var jobs: [InferenceJob] = []
+        @Published var requestStatus = RequestStatus.idle
         
-        func refresh() async throws {
+        @discardableResult
+        func refresh() async throws -> Int {
             do {
+                self.requestStatus = .loading
                 let jobs = try await ListInferenceService.call()
+                self.requestStatus = .success
                 self.jobs = jobs.sortedNewestFirst()
+                let queuedCount = jobs.filter { $0.status == .queued }.count
+                return queuedCount
             } catch {
                 os_log("%@", log: .default, type: .info, error.localizedDescription)
-                throw DisplayableError("Error calling list inferences:\n\(error.localizedDescription)")
+                let displayableError = DisplayableError("Error calling list inferences:\n\(error.localizedDescription)")
+                self.requestStatus = .error(displayableError)
+                throw displayableError
             }
         }
         
