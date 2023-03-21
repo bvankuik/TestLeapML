@@ -13,5 +13,6 @@ struct ContentView: View {
     
     var body: some View {
         InferenceListContainer(viewModel: self.viewModel)
+            .environmentObject(RefreshTask(inferenceListViewModel: self.viewModel))
     }
 }

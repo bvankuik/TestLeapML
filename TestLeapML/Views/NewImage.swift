@@ -10,6 +10,7 @@ import LeapML
 
 struct NewImage: View {
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var refreshTask: RefreshTask
     @State private var viewModel = ViewModel()
     let listViewModel: InferenceList.ViewModel
     
@@ -66,7 +67,10 @@ struct NewImage: View {
             numberOfImages: self.viewModel.numberOfImages,
             promptStrength: self.viewModel.promptStrength
         )
-        GenerateImageTask.run(requestBody: requestBody, listViewModel: self.listViewModel)
+        Task {
+            let newJob = try await GenerateImageService.call(requestBody: requestBody)
+            self.refreshTask.run()
+        }
     }
 }
 

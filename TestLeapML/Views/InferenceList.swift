@@ -9,31 +9,8 @@ import OSLog
 import SwiftUI
 import LeapML
 
-extension InferenceList {
-    struct RowLabel: View {
-        let job: InferenceJob
-        
-        var body: some View {
-            VStack {
-                Text(job.prompt)
-                    .lineLimit(1)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                HStack {
-                    Text(job.createdAt.formatted(.dateTime))
-                        .font(.caption)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Spacer()
-                    if self.job.status == .queued {
-                        Text("Queued")
-                            .font(.caption)
-                    }
-                }
-            }
-        }
-    }
-}
-
 struct InferenceList: View {
+    @EnvironmentObject private var refreshTask: RefreshTask
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
