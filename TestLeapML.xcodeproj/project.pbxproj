@@ -41,7 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		89FC5EC229939615004340DE /* PBXContainerItemProxy */ = {
+		8934946E29D6FABD005DE11F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 89FC5EA829939613004340DE /* Project object */;
 			proxyType = 1;
@@ -272,7 +272,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				89FC5EC329939615004340DE /* PBXTargetDependency */,
+				8934946F29D6FABD005DE11F /* PBXTargetDependency */,
 			);
 			name = TestLeapMLTests;
 			productName = TestLeapMLTests;
@@ -382,10 +382,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		89FC5EC329939615004340DE /* PBXTargetDependency */ = {
+		8934946F29D6FABD005DE11F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 89FC5EAF29939613004340DE /* TestLeapML */;
-			targetProxy = 89FC5EC229939615004340DE /* PBXContainerItemProxy */;
+			targetProxy = 8934946E29D6FABD005DE11F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -611,7 +611,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestLeapML.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestLeapML";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AI Canvas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AI Canvas";
 			};
 			name = Debug;
 		};
@@ -633,7 +633,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestLeapML.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestLeapML";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AI Canvas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AI Canvas";
 			};
 			name = Release;
 		};

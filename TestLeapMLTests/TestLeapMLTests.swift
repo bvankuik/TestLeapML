@@ -6,7 +6,8 @@
 //
 
 import XCTest
-@testable import TestLeapML
+@testable import AI_Canvas
+import LeapML
 
 final class TestLeapMLTests: XCTestCase {
 
