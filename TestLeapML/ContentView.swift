@@ -12,7 +12,7 @@ struct ContentView: View {
     @StateObject private var viewModel = InferenceList.ViewModel()
     
     var body: some View {
-        InferenceListContainer(viewModel: self.viewModel)
+        NavigationContainer(viewModel: self.viewModel)
             .environmentObject(RefreshTask(inferenceListViewModel: self.viewModel))
     }
 }

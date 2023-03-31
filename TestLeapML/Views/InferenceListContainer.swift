@@ -10,40 +10,49 @@ import LeapML
 
 struct InferenceListContainer: View {
     @ObservedObject var viewModel: InferenceList.ViewModel
+    let inferenceListHandler: () async -> Void
     
     @State private var error: Error?
     @State private var isShowingNewImage = false
     
     var body: some View {
-        NavigationStack {
-            ProgressContainer {
-                InferenceList(viewModel: self.viewModel)
-            } loader: {
-                if ProcessInfo.isPreview {
-                    try await Task.sleep(for: Duration.seconds(2))
-                    let jobs = Utils.loadModel([InferenceJob].self, from: "ListInferences")
-                    self.viewModel.jobs = jobs
-                } else {
-                    try await self.viewModel.refresh()
-                }
-            }
-            .toolbar {
-                Toolbars(
-                    isShowingNewImage: self.$isShowingNewImage,
-                    listViewModel: self.viewModel
-                )
-            }
-            .sheet(isPresented: self.$isShowingNewImage) {
-                NewImage(listViewModel: self.viewModel)
-            }
-            .overlay(ErrorBar(error: self.$error))
+        ProgressContainer {
+            InferenceList(viewModel: self.viewModel)
+        } loader: {
+            await inferenceListHandler()
         }
+        .toolbar {
+            Toolbars(
+                isShowingNewImage: self.$isShowingNewImage,
+                listViewModel: self.viewModel
+            )
+        }
+        .sheet(isPresented: self.$isShowingNewImage) {
+            NewImage(listViewModel: self.viewModel)
+        }
+        .overlay(ErrorBar(error: self.$error))
     }
 }
 
 struct InferenceListContainer_Previews: PreviewProvider {
+    struct Preview: View {
+        @ObservedObject var viewModel: InferenceList.ViewModel
+        
+        var body: some View {
+            InferenceListContainer(viewModel: self.viewModel, inferenceListHandler: self.handler)
+        }
+        
+        private func handler() async {
+            try? await Task.sleep(for: Duration.seconds(2))
+            self.viewModel.jobs = InferenceList.ViewModel.mock.jobs
+        }
+    }
+    
+    static private var viewModel = InferenceList.ViewModel.mock
+    
     static var previews: some View {
-        InferenceListContainer(viewModel: InferenceList.ViewModel.mock)
+        Preview(viewModel: self.viewModel)
+            .environmentObject(RefreshTask(inferenceListViewModel: self.viewModel))
             .previewLayout(.fixed(width: 300, height: 300))
     }
 }

@@ -10,6 +10,8 @@ import OSLog
 
 struct Toolbars: ToolbarContent {
     @Environment(\.accessibilityEnabled) private var accessibilityEnabled
+    @EnvironmentObject private var refreshTask: RefreshTask
+
     @Binding var isShowingNewImage: Bool
     @ObservedObject var listViewModel: InferenceList.ViewModel
     
@@ -28,11 +30,7 @@ struct Toolbars: ToolbarContent {
             ToolbarItem(placement: .primaryAction) {
                 Button {
                     Task {
-                        do {
-                            try await self.listViewModel.refresh()
-                        } catch {
-                            os_log("Failed refresh button: %@", log: .default, type: .info, error.localizedDescription)
-                        }
+                        try? await self.refreshTask.runLoop()
                     }
                 } label: {
                     Image(systemName: "arrow.clockwise")

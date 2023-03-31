@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8913441E29CDDCE900313BA1 /* NavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913441D29CDDCE900313BA1 /* NavigationContainer.swift */; };
 		892277DF29A7B68100881129 /* InferenceListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892277DE29A7B68100881129 /* InferenceListContainer.swift */; };
 		892906B829B63468007FA8C3 /* LeapML in Frameworks */ = {isa = PBXBuildFile; productRef = 892906B729B63468007FA8C3 /* LeapML */; };
 		894038A929C9E02A00FFCEEC /* InferenceList+RowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894038A829C9E02A00FFCEEC /* InferenceList+RowLabel.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8913441D29CDDCE900313BA1 /* NavigationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContainer.swift; sourceTree = "<group>"; };
 		892277DE29A7B68100881129 /* InferenceListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceListContainer.swift; sourceTree = "<group>"; };
 		892906B529B63451007FA8C3 /* LeapML */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = LeapML; path = ../LeapML; sourceTree = "<group>"; };
 		894038A829C9E02A00FFCEEC /* InferenceList+RowLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InferenceList+RowLabel.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				892277DE29A7B68100881129 /* InferenceListContainer.swift */,
 				8995571B29A8B617003965D8 /* ProgressContainer.swift */,
 				894038A829C9E02A00FFCEEC /* InferenceList+RowLabel.swift */,
+				8913441D29CDDCE900313BA1 /* NavigationContainer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				89B92F1F299BC061008B1375 /* InferenceDetail.swift in Sources */,
 				8998DDB729C9B859009FF5AA /* RefreshTask.swift in Sources */,
 				892277DF29A7B68100881129 /* InferenceListContainer.swift in Sources */,
+				8913441E29CDDCE900313BA1 /* NavigationContainer.swift in Sources */,
 				89FC5F08299A6118004340DE /* Toolbars.swift in Sources */,
 				89852E1129A4D3DF0084EE08 /* String+Utils.swift in Sources */,
 				89FC5EB429939613004340DE /* TestLeapMLApp.swift in Sources */,

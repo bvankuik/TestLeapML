@@ -69,7 +69,7 @@ struct NewImage: View {
         )
         Task {
             let newJob = try await GenerateImageService.call(requestBody: requestBody)
-            self.refreshTask.run()
+            try? await self.refreshTask.runLoop()
         }
     }
 }

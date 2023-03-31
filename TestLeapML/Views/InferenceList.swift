@@ -26,10 +26,12 @@ struct InferenceList: View {
             }
         }
         .refreshable {
-            do {
-                try await self.viewModel.refresh()
-            } catch {
-                os_log("Failed pull-to-refresh: %@", log: .default, type: .info, error.localizedDescription)
+            Task {
+                do {
+                    try await self.refreshTask.runLoop()
+                } catch {
+                    os_log("Failed pull-to-refresh: %@", log: .default, type: .info, error.localizedDescription)
+                }
             }
         }
         .navigationTitle("Inference jobs")
