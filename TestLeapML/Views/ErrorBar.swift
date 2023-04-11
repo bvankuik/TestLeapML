@@ -9,42 +9,47 @@ import SwiftUI
 
 struct ErrorBar: View {
     @Binding var error: Error?
+    private var opacity: Double {
+        self.error == nil ? 0 : 1
+    }
     
     var body: some View {
-        if let error {
-            VStack {
-                Spacer()
-                HStack {
-                    Text(error.localizedDescription)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .background(Color.red)
-                        .overlay(
-                            HStack {
-                                Spacer()
-                                Button("Close") {
-                                    self.error = nil
-                                }
-                                .padding()
+        VStack {
+            Spacer()
+            HStack {
+                Text(error?.localizedDescription ?? "No error")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(.white)
+                    .background(Color.red)
+                    .overlay(
+                        HStack {
+                            Spacer()
+                            Button("Close") {
+                                self.error = nil
                             }
-                        )
-                }
+                            .padding()
+                        }
+                    )
             }
-        } else {
-            EmptyView()
-        }
+        }.opacity(self.opacity).animation(.default, value: self.opacity)
     }
 }
 
 struct ErrorBar_Previews: PreviewProvider {
     struct Preview: View {
-        @State private var error: Error? = DisplayableError("Test error!")
+        private static let errorToShow = DisplayableError("Test error!")
+        @State private var error: Error? = Self.errorToShow
         
         var body: some View {
             Color.white
                 .overlay(
                     ErrorBar(error: self.$error)
+                )
+                .overlay(
+                    Button("Show it") {
+                        self.error = Self.errorToShow
+                    }
                 )
         }
     }
