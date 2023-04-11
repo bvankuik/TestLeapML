@@ -9,10 +9,10 @@ import SwiftUI
 import LeapML
 
 struct InferenceListContainer: View {
+    @EnvironmentObject private var refreshTask: RefreshTask
     @ObservedObject var viewModel: InferenceList.ViewModel
     let inferenceListHandler: () async -> Void
     
-    @State private var error: Error?
     @State private var isShowingNewImage = false
     
     var body: some View {
@@ -30,7 +30,25 @@ struct InferenceListContainer: View {
         .sheet(isPresented: self.$isShowingNewImage) {
             NewImage(listViewModel: self.viewModel)
         }
-        .overlay(ErrorBar(error: self.$error))
+        .overlay(ErrorBar(error: self.makeErrorBinding()))
+    }
+    
+    private func makeErrorBinding() -> Binding<Error?> {
+        Binding<Error?>(
+            get: {
+                switch self.refreshTask.taskStatus {
+                case .error(let error):
+                    return error
+                default:
+                    return nil
+                }
+            },
+            set: { newValue in
+                if newValue == nil {
+                    self.refreshTask.taskStatus = .idle
+                }
+            }
+        )
     }
 }
 
@@ -47,12 +65,20 @@ struct InferenceListContainer_Previews: PreviewProvider {
             self.viewModel.jobs = InferenceList.ViewModel.mock.jobs
         }
     }
-    
+
     static private var viewModel = InferenceList.ViewModel.mock
+    static private var refreshTaskWithError: RefreshTask = {
+        let refreshTask = RefreshTask(inferenceListViewModel: Self.viewModel)
+        refreshTask.taskStatus = .error(DisplayableError("Error to show in preview"))
+        return refreshTask
+    }()
     
     static var previews: some View {
         Preview(viewModel: self.viewModel)
             .environmentObject(RefreshTask(inferenceListViewModel: self.viewModel))
+            .previewLayout(.fixed(width: 300, height: 300))
+        Preview(viewModel: self.viewModel)
+            .environmentObject(Self.refreshTaskWithError)
             .previewLayout(.fixed(width: 300, height: 300))
     }
 }
