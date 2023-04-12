@@ -38,6 +38,7 @@ struct InferenceList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             InferenceList(viewModel: InferenceList.ViewModel.mock)
+                .environmentObject(RefreshTask(inferenceListViewModel: InferenceList.ViewModel.mock))
         }
     }
 }

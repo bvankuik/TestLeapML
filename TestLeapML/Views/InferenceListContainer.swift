@@ -17,6 +17,7 @@ struct InferenceListContainer: View {
     var body: some View {
         InferenceList(viewModel: self.viewModel)
             .overlay(RefreshTaskProgressView())
+            .overlay(EmptyLabel(visible: self.viewModel.jobs.isEmpty && !self.refreshTask.taskStatus.isLoading))
             .toolbar {
                 Toolbars(
                     isShowingNewImage: self.$isShowingNewImage,
@@ -26,6 +27,20 @@ struct InferenceListContainer: View {
             .sheet(isPresented: self.$isShowingNewImage) {
                 NewImage(listViewModel: self.viewModel)
             }
+    }
+}
+
+extension InferenceListContainer {
+    struct EmptyLabel: View {
+        let visible: Bool
+        
+        var body: some View {
+            if self.visible {
+                Text("No inferences found").font(.headline).italic().opacity(0.5)
+            } else {
+                EmptyView()
+            }
+        }
     }
 }
 
@@ -45,6 +60,7 @@ struct InferenceListContainer_Previews: PreviewProvider {
         }
     }
     
+    static let emptyViewModel = InferenceList.ViewModel()
     static private var viewModel = InferenceList.ViewModel.mock
     static private var refreshTaskWithError: RefreshTask = {
         let refreshTask = RefreshTask(inferenceListViewModel: Self.viewModel)
@@ -57,5 +73,7 @@ struct InferenceListContainer_Previews: PreviewProvider {
             .environmentObject(RefreshTask(inferenceListViewModel: self.viewModel))
         InferenceListContainer(viewModel: self.viewModel)
             .environmentObject(Self.refreshTaskWithError)
+        InferenceListContainer(viewModel: Self.emptyViewModel)
+            .environmentObject(RefreshTask(inferenceListViewModel: Self.emptyViewModel))
     }
 }
