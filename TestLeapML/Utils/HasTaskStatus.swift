@@ -8,7 +8,7 @@
 import LeapML
 
 enum TaskStatus {
-    case idle, loading, error(Error), success, canceling, exhausted
+    case idle, loading, error(Error), success, canceling
 
     var isLoading: Bool {
         switch self {

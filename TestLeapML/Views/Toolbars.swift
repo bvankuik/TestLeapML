@@ -30,7 +30,7 @@ struct Toolbars: ToolbarContent {
             ToolbarItem(placement: .primaryAction) {
                 Button {
                     Task {
-                        try? await self.refreshTask.runLoop()
+                        await self.refreshTask.runLoop()
                     }
                 } label: {
                     Image(systemName: "arrow.clockwise")

@@ -27,11 +27,7 @@ struct InferenceList: View {
         }
         .refreshable {
             Task {
-                do {
-                    try await self.refreshTask.runLoop()
-                } catch {
-                    os_log("Failed pull-to-refresh: %@", log: .default, type: .info, error.localizedDescription)
-                }
+                await self.refreshTask.runLoop()
             }
         }
         .navigationTitle("Inference jobs")

@@ -15,7 +15,6 @@
 		89852E0D29A4C1F90084EE08 /* Array+InferenceJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89852E0C29A4C1F90084EE08 /* Array+InferenceJob.swift */; };
 		89852E0F29A4C60E0084EE08 /* InferenceDetail+Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89852E0E29A4C60E0084EE08 /* InferenceDetail+Gallery.swift */; };
 		89852E1129A4D3DF0084EE08 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89852E1029A4D3DF0084EE08 /* String+Utils.swift */; };
-		8995571C29A8B617003965D8 /* ProgressContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995571B29A8B617003965D8 /* ProgressContainer.swift */; };
 		8995571E29A8C0C4003965D8 /* ProcessInfo+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995571D29A8C0C4003965D8 /* ProcessInfo+Preview.swift */; };
 		8998DDB729C9B859009FF5AA /* RefreshTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8998DDB629C9B859009FF5AA /* RefreshTask.swift */; };
 		8998DDB929C9C406009FF5AA /* HasTaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8998DDB829C9C406009FF5AA /* HasTaskStatus.swift */; };
@@ -26,6 +25,7 @@
 		89B92F22299CE363008B1375 /* InferenceList+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B92F21299CE363008B1375 /* InferenceList+ViewModel.swift */; };
 		89CF526C29B775F8001CA8DF /* GenerateImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF526B29B775F8001CA8DF /* GenerateImageTask.swift */; };
 		89CF526F29B77F47001CA8DF /* HasRequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF526E29B77F47001CA8DF /* HasRequestStatus.swift */; };
+		89E656D329E6C682003B9186 /* RefreshTaskProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E656D229E6C682003B9186 /* RefreshTaskProgressView.swift */; };
 		89FC5EB429939613004340DE /* TestLeapMLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EB329939613004340DE /* TestLeapMLApp.swift */; };
 		89FC5EB629939613004340DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC5EB529939613004340DE /* ContentView.swift */; };
 		89FC5EB829939615004340DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89FC5EB729939615004340DE /* Assets.xcassets */; };
@@ -59,7 +59,6 @@
 		89852E0C29A4C1F90084EE08 /* Array+InferenceJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+InferenceJob.swift"; sourceTree = "<group>"; };
 		89852E0E29A4C60E0084EE08 /* InferenceDetail+Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InferenceDetail+Gallery.swift"; sourceTree = "<group>"; };
 		89852E1029A4D3DF0084EE08 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
-		8995571B29A8B617003965D8 /* ProgressContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressContainer.swift; sourceTree = "<group>"; };
 		8995571D29A8C0C4003965D8 /* ProcessInfo+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Preview.swift"; sourceTree = "<group>"; };
 		8998DDB629C9B859009FF5AA /* RefreshTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTask.swift; sourceTree = "<group>"; };
 		8998DDB829C9C406009FF5AA /* HasTaskStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasTaskStatus.swift; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 		89B92F21299CE363008B1375 /* InferenceList+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InferenceList+ViewModel.swift"; sourceTree = "<group>"; };
 		89CF526B29B775F8001CA8DF /* GenerateImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateImageTask.swift; sourceTree = "<group>"; };
 		89CF526E29B77F47001CA8DF /* HasRequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasRequestStatus.swift; sourceTree = "<group>"; };
+		89E656D229E6C682003B9186 /* RefreshTaskProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTaskProgressView.swift; sourceTree = "<group>"; };
 		89FC5EB029939613004340DE /* AI Canvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI Canvas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FC5EB329939613004340DE /* TestLeapMLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLeapMLApp.swift; sourceTree = "<group>"; };
 		89FC5EB529939613004340DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				89852E0C29A4C1F90084EE08 /* Array+InferenceJob.swift */,
-				89852E1029A4D3DF0084EE08 /* String+Utils.swift */,
 				8995571D29A8C0C4003965D8 /* ProcessInfo+Preview.swift */,
+				89852E1029A4D3DF0084EE08 /* String+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,17 +212,17 @@
 		89FC5EF5299A4C79004340DE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				89FC5EF6299A4C97004340DE /* InferenceList.swift */,
-				89FC5F07299A6118004340DE /* Toolbars.swift */,
-				89FC5F09299A7034004340DE /* NewImage.swift */,
 				89B92F1A299BB711008B1375 /* ErrorBar.swift */,
 				89B92F1E299BC061008B1375 /* InferenceDetail.swift */,
 				89852E0E29A4C60E0084EE08 /* InferenceDetail+Gallery.swift */,
-				89B2C7BE29A62D1A0035C37E /* ResolutionPicker.swift */,
-				892277DE29A7B68100881129 /* InferenceListContainer.swift */,
-				8995571B29A8B617003965D8 /* ProgressContainer.swift */,
+				89FC5EF6299A4C97004340DE /* InferenceList.swift */,
 				894038A829C9E02A00FFCEEC /* InferenceList+RowLabel.swift */,
+				892277DE29A7B68100881129 /* InferenceListContainer.swift */,
 				8913441D29CDDCE900313BA1 /* NavigationContainer.swift */,
+				89FC5F09299A7034004340DE /* NewImage.swift */,
+				89B2C7BE29A62D1A0035C37E /* ResolutionPicker.swift */,
+				89FC5F07299A6118004340DE /* Toolbars.swift */,
+				89E656D229E6C682003B9186 /* RefreshTaskProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,10 +230,10 @@
 		89FC5F04299A504F004340DE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				89FC5F05299A505A004340DE /* Utils.swift */,
 				89B92F1C299BB810008B1375 /* DisplayableError.swift */,
 				89CF526E29B77F47001CA8DF /* HasRequestStatus.swift */,
 				8998DDB829C9C406009FF5AA /* HasTaskStatus.swift */,
+				89FC5F05299A505A004340DE /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -348,12 +348,12 @@
 				89B2C7BF29A62D1A0035C37E /* ResolutionPicker.swift in Sources */,
 				89CF526C29B775F8001CA8DF /* GenerateImageTask.swift in Sources */,
 				89852E0F29A4C60E0084EE08 /* InferenceDetail+Gallery.swift in Sources */,
+				89E656D329E6C682003B9186 /* RefreshTaskProgressView.swift in Sources */,
 				89FC5EF7299A4C97004340DE /* InferenceList.swift in Sources */,
 				89B92F1B299BB711008B1375 /* ErrorBar.swift in Sources */,
 				89B92F1D299BB810008B1375 /* DisplayableError.swift in Sources */,
 				89B92F22299CE363008B1375 /* InferenceList+ViewModel.swift in Sources */,
 				89FC5EB629939613004340DE /* ContentView.swift in Sources */,
-				8995571C29A8B617003965D8 /* ProgressContainer.swift in Sources */,
 				89CF526F29B77F47001CA8DF /* HasRequestStatus.swift in Sources */,
 				894038A929C9E02A00FFCEEC /* InferenceList+RowLabel.swift in Sources */,
 				89B92F1F299BC061008B1375 /* InferenceDetail.swift in Sources */,

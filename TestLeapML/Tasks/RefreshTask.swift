@@ -17,26 +17,31 @@ import LeapML
         self.inferenceListViewModel = inferenceListViewModel
     }
     
-    func runLoop() async throws {
+    func runLoop() async {
         var queuedCount = 0
         var sleepCount = 0
         repeat {
             guard sleepCount < 20 else {
-                self.taskStatus = .exhausted
+                self.taskStatus = .error(DisplayableError("After many retries, failed to get the result"))
                 os_log("Gave up refreshing, count reached \(sleepCount)")
                 break
             }
             os_log("Refresh task submitting")
-            queuedCount = try await self.refresh()
-            if queuedCount == 0 {
-                self.taskStatus = .success
-                os_log("Nothing to refresh anymore")
-                break
-            } else {
-                self.taskStatus = .idle
-                try? await Task.sleep(for: .seconds(2))
-                sleepCount += 1
-                os_log("Sleepcount %d")
+            
+            do {
+                queuedCount = try await self.refresh()
+                if queuedCount == 0 {
+                    self.taskStatus = .success
+                    os_log("Nothing to refresh anymore")
+                    break
+                } else {
+                    self.taskStatus = .idle
+                    try? await Task.sleep(for: .seconds(2))
+                    sleepCount += 1
+                    os_log("Sleepcount %d")
+                }
+            } catch {
+                self.taskStatus = .error(error)
             }
         } while !Task.isCancelled && queuedCount > 0
     }
@@ -50,9 +55,7 @@ import LeapML
             return queuedCount
         } catch {
             os_log("%@", log: .default, type: .info, error.localizedDescription)
-            let displayableError = DisplayableError("Error calling list inferences:\n\(error.localizedDescription)")
-            self.taskStatus = .error(displayableError)
-            throw displayableError
+            throw DisplayableError("Error calling list inferences:\n\(error.localizedDescription)")
         }
     }
 }
